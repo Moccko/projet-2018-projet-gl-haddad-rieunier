@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{d3d624e5-0181-471c-8fa0-dc3df3d3cce2}</ProjectGuid>
+    <ProjectGuid>{e6a005ef-f549-41a5-90dc-48e60be3daf5}</ProjectGuid>
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
     <Name>Modelisation</Name>
     <RootNamespace>Modelisation</RootNamespace>
@@ -22,13 +22,6 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="Sequence.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Sequence.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Sequence.sequencediagram</DependentUpon>
-    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="Classes.classdiagram">
       <SubType>Content</SubType>
@@ -36,6 +29,13 @@
     <Content Include="Classes.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Classes.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Sequence.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequence.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequence.sequencediagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Modelisation.uml">
       <SubType>Content</SubType>
