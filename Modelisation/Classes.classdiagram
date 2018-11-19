@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="8f5e3d2f-52ae-4fbf-95db-05b5a09062a8" name="Classes" linkedPackageId="0d71d9c6-f868-4c33-a8f5-7728b8136da9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="1f94e589-924f-42e4-89dc-8ddb0a6d5811">
-      <profileInstance Id="c43f9152-7f6a-4d76-88e7-dc95f5f696d7" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="11007996-1eba-4765-8e23-3440a5fbbd90">
-      <profileInstance Id="2afd9855-d259-4705-84bc-c90b55f158d7" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="8f5e3d2f-52ae-4fbf-95db-05b5a09062a8" name="Classes" linkedPackageId="df972b94-3e9c-43b4-a060-9d8d1bdd8145" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="13e0765d-9571-4137-b655-4295e47d35ed" name="Coureur" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -44,42 +30,6 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="18b4376c-1427-4f9c-843c-23c14ff37d15" />
-          </association>
-          <association Id="4ab71d44-8d1e-41d0-b8c0-c3fb2949b935" isDerived="false" sourceEndRoleName="Coureur" targetEndRoleName="Sponsor" isLeaf="false" isAbstract="false">
-            <classMoniker Id="902a40c7-7c81-4dcd-a945-4715ec61721e" LastKnownName="Sponsor" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="49d6c0d1-56c9-42a5-97a3-266599aef528" name="Coureur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString Id="029615b0-63fa-40e5-addf-6cdb5022a414" name="Lower" value="*">
-                      <elementDefinition Id="2968a315-38ff-4dfb-9601-25b1b9a53ae0" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="34e646d7-9c25-43ad-ac67-621abcd43f79" name="Upper" value="*">
-                      <elementDefinition Id="801eb09f-2f5b-4289-872c-bdd861828427" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="25c54190-f261-4c08-92d9-101571972819" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="2530eadf-20c7-4a7c-ae9a-3882a6842379" name="Sponsor" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="09e93699-764f-43d2-bae2-7c435f940d61" name="Lower" value="*">
-                      <elementDefinition Id="c8ba36ae-c5e4-41a4-949f-a68c7844a225" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="f5a9da6a-2b68-4031-90ea-b9fd2c46f618" name="Upper" value="*">
-                      <elementDefinition Id="2e8d9d9b-dcab-4585-873f-312398ed4c29" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="851f9d0d-7216-4378-879b-61b3cbdbeb0f" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="a8b1c267-94f6-4a03-ac8c-fdc14080fee5" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -125,11 +75,6 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="6d99932a-e1f5-4a1b-95f3-18624d12d6e8" name="Utilisateur" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="767eda56-094c-4f47-aa7b-946be6507f91" />
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="902a40c7-7c81-4dcd-a945-4715ec61721e" name="Sponsor" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="a63c1417-30a8-4463-92d1-469dd9ade95c" />
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -191,7 +136,7 @@
           <property Id="b5ef2e46-7ae5-40d6-938e-750bd315f2dc" name="Temps" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="3e668b84-01da-436e-a047-6cedcc9c5ca4" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="0aac6559-09cc-4fa4-b7c5-f3d1ce8bca18" LastKnownName="Double" />
+              <referencedTypeMoniker Id="84457c89-1d97-464d-b63d-e10b1e1ddf8b" LastKnownName="String" />
             </type_NamedElement>
           </property>
           <property Id="90784446-e82e-48fb-9c78-972fda1c43e3" name="VitesseMoyenne" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -235,11 +180,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="0aac6559-09cc-4fa4-b7c5-f3d1ce8bca18" name="Double" isAbstract="false" isLeaf="false" cachedFullName="Double">
-        <elementDefinition Id="f45ea388-9c87-4c28-9ad4-4d0e3bcfe675" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="79f383fd-6de3-48e2-b1ac-85ccf95912c5" name="Double" isAbstract="false" isLeaf="false" cachedFullName="Double">
         <elementDefinition Id="f45ea388-9c87-4c28-9ad4-4d0e3bcfe675" />
       </referencedType>
@@ -259,8 +199,13 @@
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="84457c89-1d97-464d-b63d-e10b1e1ddf8b" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
-  <package Id="0d71d9c6-f868-4c33-a8f5-7728b8136da9" name="Modelisation">
-    <elementDefinition Id="545e9ccd-71f9-4712-9ee9-44569d535dd6" />
+  <package Id="df972b94-3e9c-43b4-a060-9d8d1bdd8145" name="Modelisation">
+    <elementDefinition Id="9f9e1d21-0d02-418c-bd61-ad92d98b70f4" />
   </package>
 </logicalClassDesignerModel>
