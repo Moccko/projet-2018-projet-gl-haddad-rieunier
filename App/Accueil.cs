@@ -19,7 +19,11 @@ namespace App
 
         private void ConnexionBtn_Click(object sender, EventArgs e)
         {
+            Connexion connexion = new Connexion();
+            if(connexion.DialogResult == DialogResult.OK)
+            {
 
+            }
         }
 
         private void CoursesBtn_Click(object sender, EventArgs e)

@@ -1,1 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
+
+  <class name="Participation" table="participation">
+    <composite-id>
+      <many-to-one name="Coureur" class="Coureur" column="coureur"/>
+      <many-to-one name="Course" class="Course" column="course"/>
+    </composite-id>
+    <property name="AllureMoyenne" column="allureMoyenne" not-null="true"/>
+    <property name="NumeroDossard" column="numeroDossard" not-null="true"/>
+    <property name="Temps" column="temps" not-null="true"/>
+    <property name="VitesseMoyenne" column="vitesseMoyenne" not-null="true"/>
+  </class>
+
+</hibernate-mapping>
