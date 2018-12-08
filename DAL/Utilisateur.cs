@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class Utilisateur
+    public class Utilisateur
     {
         public virtual string NomUtilisateur { get; set; }
         public virtual string MotDePasse { get; set; }

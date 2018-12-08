@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class Coureur
+    public class Coureur
     {
         public virtual int Annee { get; set; }
         public virtual string Courriel { get; set; }

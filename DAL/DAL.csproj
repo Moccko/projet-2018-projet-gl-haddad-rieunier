@@ -71,11 +71,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coureur.cs" />
+    <Compile Include="CoureurRepository.cs" />
     <Compile Include="Course.cs" />
+    <Compile Include="CourseRepository.cs" />
+    <Compile Include="ICoureurRepository.cs" />
+    <Compile Include="ICourseRepository.cs" />
+    <Compile Include="IParticipationRepository.cs" />
+    <Compile Include="IUtilisateurRepository.cs" />
     <Compile Include="Participation.cs" />
+    <Compile Include="ParticipationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
+    <Compile Include="StubCoureurRepository.cs" />
+    <Compile Include="StubCourseRepository.cs" />
+    <Compile Include="StubParticipationRepository.cs" />
+    <Compile Include="StubUtilisateurRepository.cs" />
     <Compile Include="Utilisateur.cs" />
+    <Compile Include="UtilisateurRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

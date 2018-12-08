@@ -28,33 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CoursesBtn = new System.Windows.Forms.Button();
-            this.CoureursBtn = new System.Windows.Forms.Button();
             this.ConnexionBtn = new System.Windows.Forms.Button();
             this.TitreLb = new System.Windows.Forms.Label();
+            this.CoursesListeBtn = new System.Windows.Forms.Button();
+            this.CoureursListeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // CoursesBtn
-            // 
-            this.CoursesBtn.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoursesBtn.Location = new System.Drawing.Point(255, 113);
-            this.CoursesBtn.Name = "CoursesBtn";
-            this.CoursesBtn.Size = new System.Drawing.Size(174, 67);
-            this.CoursesBtn.TabIndex = 0;
-            this.CoursesBtn.Text = "Gestion courses";
-            this.CoursesBtn.UseVisualStyleBackColor = true;
-            this.CoursesBtn.Click += new System.EventHandler(this.CoursesBtn_Click);
-            // 
-            // CoureursBtn
-            // 
-            this.CoureursBtn.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoureursBtn.Location = new System.Drawing.Point(255, 198);
-            this.CoureursBtn.Name = "CoureursBtn";
-            this.CoureursBtn.Size = new System.Drawing.Size(174, 67);
-            this.CoureursBtn.TabIndex = 1;
-            this.CoureursBtn.Text = "Gestion coureurs";
-            this.CoureursBtn.UseVisualStyleBackColor = true;
-            this.CoureursBtn.Click += new System.EventHandler(this.CoureursBtn_Click);
             // 
             // ConnexionBtn
             // 
@@ -77,15 +55,37 @@
             this.TitreLb.TabIndex = 3;
             this.TitreLb.Text = "La gestion de courses pour les nuls";
             // 
+            // CoursesListeBtn
+            // 
+            this.CoursesListeBtn.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoursesListeBtn.Location = new System.Drawing.Point(19, 65);
+            this.CoursesListeBtn.Name = "CoursesListeBtn";
+            this.CoursesListeBtn.Size = new System.Drawing.Size(220, 59);
+            this.CoursesListeBtn.TabIndex = 4;
+            this.CoursesListeBtn.Text = "Liste des courses";
+            this.CoursesListeBtn.UseVisualStyleBackColor = true;
+            this.CoursesListeBtn.Click += new System.EventHandler(this.CoursesListeBtn_Click);
+            // 
+            // CoureursListeBtn
+            // 
+            this.CoureursListeBtn.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoureursListeBtn.Location = new System.Drawing.Point(19, 156);
+            this.CoureursListeBtn.Name = "CoureursListeBtn";
+            this.CoureursListeBtn.Size = new System.Drawing.Size(220, 59);
+            this.CoureursListeBtn.TabIndex = 5;
+            this.CoureursListeBtn.Text = "Liste des coureurs";
+            this.CoureursListeBtn.UseVisualStyleBackColor = true;
+            this.CoureursListeBtn.Click += new System.EventHandler(this.CoureursListeBtn_Click);
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 370);
+            this.Controls.Add(this.CoureursListeBtn);
+            this.Controls.Add(this.CoursesListeBtn);
             this.Controls.Add(this.TitreLb);
             this.Controls.Add(this.ConnexionBtn);
-            this.Controls.Add(this.CoureursBtn);
-            this.Controls.Add(this.CoursesBtn);
             this.Name = "Accueil";
             this.Text = "La gestion de courses pour les nuls";
             this.ResumeLayout(false);
@@ -94,11 +94,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button CoursesBtn;
-        private System.Windows.Forms.Button CoureursBtn;
         private System.Windows.Forms.Button ConnexionBtn;
         private System.Windows.Forms.Label TitreLb;
+        private System.Windows.Forms.Button CoursesListeBtn;
+        private System.Windows.Forms.Button CoureursListeBtn;
     }
 }
 

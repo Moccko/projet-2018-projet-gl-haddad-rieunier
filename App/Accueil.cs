@@ -20,20 +20,28 @@ namespace App
         private void ConnexionBtn_Click(object sender, EventArgs e)
         {
             Connexion connexion = new Connexion();
-            if(connexion.DialogResult == DialogResult.OK)
+            if (connexion.ShowDialog() == DialogResult.OK)
             {
 
             }
         }
 
-        private void CoursesBtn_Click(object sender, EventArgs e)
+        private void CoursesListeBtn_Click(object sender, EventArgs e)
         {
+            ListeCourses listeCourses = new ListeCourses();
+            if (listeCourses.ShowDialog() == DialogResult.OK)
+            {
 
+            }
         }
 
-        private void CoureursBtn_Click(object sender, EventArgs e)
+        private void CoureursListeBtn_Click(object sender, EventArgs e)
         {
+            ListeCoureurs listeCoureurs = new ListeCoureurs();
+            if (listeCoureurs.ShowDialog() == DialogResult.OK)
+            {
 
+            }
         }
     }
 }
