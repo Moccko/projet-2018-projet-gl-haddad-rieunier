@@ -10,14 +10,14 @@ namespace DAL
     {
         public virtual Course Course { get; set; }
         public virtual Coureur Coureur { get; set; }
-        public virtual double AllureMoyenne { get; set; }
         public virtual int NumeroDeDossard { get; set; }
         public virtual string Temps { get; set; }
+        public virtual double AllureMoyenne { get; set; }
         public virtual double VitesseMoyenne { get; set; }
 
         public Participation() { }
 
-        public Participation(Course course, Coureur coureur, double allureMoyenne, int numeroDeDossard, string temps, double vitesseMoyenne)
+        public Participation(Course course, Coureur coureur, int numeroDeDossard, string temps, double allureMoyenne = 0, double vitesseMoyenne = 0)
         {
             Course = course;
             Coureur = coureur;

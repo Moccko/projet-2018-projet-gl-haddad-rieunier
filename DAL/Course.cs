@@ -14,11 +14,23 @@ namespace DAL
 
         public Course() { }
 
+        public Course(string nom, int annee)
+        {
+            Nom = nom;
+            Annee = annee;
+            Participations = new List<Participation>();
+        }
+
         public Course(string nom, int annee, List<Participation> participations)
         {
             Nom = nom;
             Annee = annee;
             Participations = participations;
+        }
+
+        public override string ToString()
+        {
+            return $"{Nom}, {Annee}";
         }
     }
 }

@@ -16,9 +16,9 @@ namespace DAL
             _participations = new List<Participation>();
             List<Course> courses = new StubCourseRepository().GetAll();
             List<Coureur> coureurs = new StubCoureurRepository().GetAll();
-            _participations.Add(new Participation(courses[0], coureurs[0], 70, 5, "10'00\"", 90));
-            _participations.Add(new Participation(courses[1], coureurs[1], 35, 10, "7'50\"", 120));
-            _participations.Add(new Participation(courses[2], coureurs[2], 140, 25, "12'34\"", 60));
+            _participations.Add(new Participation(courses[0], coureurs[0], 5, "1:48:53", 70, 90));
+            _participations.Add(new Participation(courses[1], coureurs[1], 10, "1:23:24", 35, 120));
+            _participations.Add(new Participation(courses[2], coureurs[2], 25, "1:45:13", 140, 60));
         }
 
         public List<Participation> GetAll()

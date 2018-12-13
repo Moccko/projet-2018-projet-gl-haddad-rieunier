@@ -28,5 +28,10 @@ namespace DAL
             NoLicenceFFA = noLicenceFFA;
             Participations = participations;
         }
+
+        public override string ToString()
+        {
+            return $"{Prenom} {Nom}, {NoLicenceFFA}";
+        }
     }
 }

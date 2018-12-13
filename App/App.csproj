@@ -59,6 +59,12 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreerCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreerCourse.Designer.cs">
+      <DependentUpon>CreerCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListeCoureurs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreerCourse.resx">
+      <DependentUpon>CreerCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListeCoureurs.resx">
       <DependentUpon>ListeCoureurs.cs</DependentUpon>
