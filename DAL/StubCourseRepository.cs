@@ -7,16 +7,31 @@ using System.Threading.Tasks;
 namespace DAL
 {
     /// <summary>
-    /// 
+    /// Classe de gestion de données tests sur les courses
+    /// Implémente le pattern singleton pour pouvoir conserver les données à travers les formulaires
     /// </summary>
     public class StubCourseRepository : Repository, ICourseRepository
     {
+        private static StubCourseRepository _instance = null;
+
+        public static StubCourseRepository Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new StubCourseRepository();
+                }
+                return _instance;
+            }
+        }
+
         private List<Course> _courses;
 
-        public StubCourseRepository()
+        private StubCourseRepository()
         {
             _courses = new List<Course>();
-            List<Coureur> coureurs = new StubCoureurRepository().GetAll();
+            List<Coureur> coureurs = StubCoureurRepository.Instance.GetAll();
             Course c1 = new Course("Rallye des apparts", 2017);
             Participation p1 = new Participation(c1, coureurs[0], 8645, "1:45:21");
             Participation p2 = new Participation(c1, coureurs[1], 8646, "1:54:12");

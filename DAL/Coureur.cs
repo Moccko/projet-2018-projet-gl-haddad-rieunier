@@ -31,7 +31,7 @@ namespace DAL
 
         public override string ToString()
         {
-            return $"{Prenom} {Nom}, {NoLicenceFFA}";
+            return $"{Prenom} {Nom.ToUpper()}";
         }
     }
 }

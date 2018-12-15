@@ -51,7 +51,7 @@
             // 
             // AnneeMTB
             // 
-            this.AnneeMTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.AnneeMTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AnneeMTB.Location = new System.Drawing.Point(12, 166);
             this.AnneeMTB.Mask = "2099";
@@ -62,7 +62,7 @@
             // 
             // NomTB
             // 
-            this.NomTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.NomTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NomTB.Location = new System.Drawing.Point(12, 108);
             this.NomTB.Name = "NomTB";
@@ -93,7 +93,7 @@
             // 
             // ValiderBtn
             // 
-            this.ValiderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.ValiderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ValiderBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ValiderBtn.Enabled = false;

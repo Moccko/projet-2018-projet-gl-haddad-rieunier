@@ -28,5 +28,19 @@ namespace DAL
             throw new NotImplementedException();
         }
 
+        public List<Coureur> GetByName(string nom)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Coureur> GetByFirstName(string prenom)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Coureur GetByLicense(string licence)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

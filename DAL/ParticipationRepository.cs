@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class ParticipationRepository : Repository , IParticipationRepository
+    public class ParticipationRepository : Repository, IParticipationRepository
 
     {
         public List<Participation> GetAll()
@@ -15,6 +15,11 @@ namespace DAL
         }
 
         public void Save(Participation p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Save(List<Participation> l)
         {
             throw new NotImplementedException();
         }

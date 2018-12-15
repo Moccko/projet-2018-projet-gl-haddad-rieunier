@@ -17,7 +17,7 @@ namespace App
         public ListeCoureurs()
         {
             InitializeComponent();
-            _coureurRepository = new StubCoureurRepository();
+            _coureurRepository = StubCoureurRepository.Instance;
 
             CoureursDGV.DataSource = _coureurRepository.GetAll();
         }

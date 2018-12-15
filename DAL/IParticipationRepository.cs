@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-   public interface IParticipationRepository
+    public interface IParticipationRepository
     {
         List<Participation> GetAll();
         void Save(Participation p);
+        void Save(List<Participation> l);
         void Delete(Participation p);
     }
 }

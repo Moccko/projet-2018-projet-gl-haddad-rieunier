@@ -6,15 +6,27 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class StubUtilisateurRepository: Repository, IUtilisateurRepository
+    public class StubUtilisateurRepository : Repository, IUtilisateurRepository
     {
+        private static StubUtilisateurRepository _instance = null;
+
+        public static StubUtilisateurRepository Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new StubUtilisateurRepository();
+                return _instance;
+            }
+        }
+
         private List<Utilisateur> _utilisateurs;
 
-        public StubUtilisateurRepository()
+        private StubUtilisateurRepository()
         {
             _utilisateurs = new List<Utilisateur>();
-            _utilisateurs.Add(new Utilisateur("rrieunier","rider","rrieunier@ensc.fr"));
-            _utilisateurs.Add(new Utilisateur("bpesquet","visualstudio","bpesquet@ensc.fr"));
+            _utilisateurs.Add(new Utilisateur("rrieunier", "rider", "rrieunier@ensc.fr"));
+            _utilisateurs.Add(new Utilisateur("bpesquet", "visualstudio", "bpesquet@ensc.fr"));
             _utilisateurs.Add(new Utilisateur("rhaddad", "jenerentrepasdansceconflit", "rhaddad@ensc.fr"));
         }
 
