@@ -90,6 +90,9 @@
     <Compile Include="ListeCourses.Designer.cs">
       <DependentUpon>ListeCourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlaceholderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilisateurCourant.cs" />
