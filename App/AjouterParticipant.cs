@@ -16,7 +16,7 @@ namespace App
         private Coureur[] _coureurs;
         public Coureur Coureur { get { return _coureurs[CoureurCB.SelectedIndex]; } }
         public string Temps { get { return TempsMTB.Text; } }
-        public int NoDossard { get { return Convert.ToInt32(NoDossardTB.Text); } }
+        public int NoDossard { get { return Convert.ToInt32(NoDossardMTB.Text); } }
 
         public AjouterParticipant(string course)
         {
@@ -32,8 +32,18 @@ namespace App
         private void CoureurCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             Coureur coureurActuel = _coureurs[CoureurCB.SelectedIndex];
-            AgeTB.Text = (DateTime.Now.Year - coureurActuel.Annee).ToString();
+            AgeTB.Text = (DateTime.Now.Year - coureurActuel.DateNaissance.Year).ToString();
             LicenceTB.Text = coureurActuel.NoLicenceFFA;
+        }
+
+        private void TempsMTB_KeyUp(object sender, KeyEventArgs e)
+        {
+            ValiderBtn.Enabled = TempsMTB.MaskFull && NoDossardMTB.MaskFull;
+        }
+
+        private void NoDossardMTB_KeyUp(object sender, KeyEventArgs e)
+        {
+            ValiderBtn.Enabled = TempsMTB.MaskFull && NoDossardMTB.MaskFull;
         }
     }
 }

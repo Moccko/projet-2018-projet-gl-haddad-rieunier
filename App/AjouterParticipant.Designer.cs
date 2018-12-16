@@ -39,9 +39,9 @@
             this.AgeTB = new System.Windows.Forms.TextBox();
             this.LicenceLb = new System.Windows.Forms.Label();
             this.TempsLb = new System.Windows.Forms.Label();
-            this.NoDossardTB = new System.Windows.Forms.TextBox();
             this.TempsMTB = new System.Windows.Forms.MaskedTextBox();
             this.NoDossardLb = new System.Windows.Forms.Label();
+            this.NoDossardMTB = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // ValiderBtn
@@ -158,13 +158,6 @@
             this.TempsLb.Text = "Temps";
             this.TempsLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // NoDossardTB
-            // 
-            this.NoDossardTB.Location = new System.Drawing.Point(192, 243);
-            this.NoDossardTB.Name = "NoDossardTB";
-            this.NoDossardTB.Size = new System.Drawing.Size(154, 20);
-            this.NoDossardTB.TabIndex = 24;
-            // 
             // TempsMTB
             // 
             this.TempsMTB.Location = new System.Drawing.Point(12, 242);
@@ -172,6 +165,7 @@
             this.TempsMTB.Name = "TempsMTB";
             this.TempsMTB.Size = new System.Drawing.Size(154, 20);
             this.TempsMTB.TabIndex = 25;
+            this.TempsMTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TempsMTB_KeyUp);
             // 
             // NoDossardLb
             // 
@@ -184,14 +178,23 @@
             this.NoDossardLb.Text = "Numéro de dossard";
             this.NoDossardLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // NoDossardMTB
+            // 
+            this.NoDossardMTB.Location = new System.Drawing.Point(192, 242);
+            this.NoDossardMTB.Mask = "999999";
+            this.NoDossardMTB.Name = "NoDossardMTB";
+            this.NoDossardMTB.Size = new System.Drawing.Size(154, 20);
+            this.NoDossardMTB.TabIndex = 27;
+            this.NoDossardMTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NoDossardMTB_KeyUp);
+            // 
             // AjouterParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 336);
+            this.Controls.Add(this.NoDossardMTB);
             this.Controls.Add(this.NoDossardLb);
             this.Controls.Add(this.TempsMTB);
-            this.Controls.Add(this.NoDossardTB);
             this.Controls.Add(this.TempsLb);
             this.Controls.Add(this.LicenceLb);
             this.Controls.Add(this.AgeTB);
@@ -223,8 +226,8 @@
         private System.Windows.Forms.TextBox AgeTB;
         private System.Windows.Forms.Label LicenceLb;
         private System.Windows.Forms.Label TempsLb;
-        private System.Windows.Forms.TextBox NoDossardTB;
         private System.Windows.Forms.MaskedTextBox TempsMTB;
         private System.Windows.Forms.Label NoDossardLb;
+        private System.Windows.Forms.MaskedTextBox NoDossardMTB;
     }
 }

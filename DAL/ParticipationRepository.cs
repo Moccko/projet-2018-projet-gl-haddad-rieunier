@@ -28,5 +28,15 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
+
+        public List<Participation> GetByCoureur(Coureur c)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Participation> GetByCourse(Course c)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

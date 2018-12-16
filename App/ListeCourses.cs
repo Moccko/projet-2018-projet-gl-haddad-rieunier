@@ -33,7 +33,7 @@ namespace App
         {
             _course_actuelle = _courses[CoursesLB.SelectedIndex];
             NomTB.Text = _course_actuelle.Nom;
-            AnneeMTB.Text = _course_actuelle.Annee.ToString();
+            DateMTB.Text = _course_actuelle.Annee.ToString("dd/MM/yyyy");
             ParticipantsDGV.DataSource = _course_actuelle.Participations;
             EnregistrerBtn.Enabled = false;
         }
@@ -63,7 +63,7 @@ namespace App
             CreerCourse creerCourse = new CreerCourse();
             if (creerCourse.ShowDialog() == DialogResult.OK)
             {
-                _courseRepository.Save(new Course(creerCourse.NomCourse, creerCourse.AnneeCourse));
+                _courseRepository.Save(new Course(creerCourse.NomCourse, creerCourse.DateCourse));
                 _courses = _courseRepository.GetAll();
                 CoursesLB.Items.Clear();
                 CoursesLB.Items.AddRange(_courses.Select(course => course.ToString()).ToArray());
@@ -76,13 +76,15 @@ namespace App
             AjouterParticipant form = new AjouterParticipant(CoursesLB.SelectedItem.ToString());
             if (form.ShowDialog() == DialogResult.OK)
             {
-
+                _participation_repository.Save(new Participation(_course_actuelle, form.Coureur, form.NoDossard, form.Temps));
+                ParticipantsDGV.DataSource = _participation_repository.GetByCourse(_course_actuelle).ToList();
             }
         }
 
         private void SupprimerParticipantBtn_Click(object sender, EventArgs e)
         {
 
+            //_participation_repository.Save(new Participation(_course_actuelle, form.Coureur, form.NoDossard, form.Temps));
         }
 
         private void ImporterCourseBtn_Click(object sender, EventArgs e)
@@ -100,39 +102,52 @@ namespace App
             }
         }
 
-        private void RechercheParticipantTB_Enter(object sender, EventArgs e)
+        private void RechercheCoursePTB_KeyUp(object sender, KeyEventArgs e)
         {
-            RechercheParticipantTB.Text = "";
-        }
-
-        private void RechercheParticipantTB_Leave(object sender, EventArgs e)
-        {
-            if (RechercheParticipantTB.Text == "")
-                RechercheParticipantTB.Text = "Rechercher un participant";
-        }
-
-        private void RechercheParticipantTB_KeyUp(object sender, KeyEventArgs e)
-        {
-            ParticipantsDGV.DataSource = _course_actuelle.Participations.Where(p => p.Coureur.Nom.ContientAuMoins(RechercheParticipantTB.Text) || p.Coureur.Prenom.ContientAuMoins(RechercheParticipantTB.Text) || p.NumeroDeDossard.ToString().ToLower().ContientAuMoins(RechercheParticipantTB.Text)).ToList();
-        }
-
-        private void RechercheCourseTB_Enter(object sender, EventArgs e)
-        {
-            RechercheCourseTB.Text = "";
-        }
-
-        private void RechercheCourseTB_Leave(object sender, EventArgs e)
-        {
-            if (RechercheCourseTB.Text == "")
-                RechercheCourseTB.Text = "Rechercher une course";
-        }
-
-        private void RechercheCourseTB_KeyUp(object sender, KeyEventArgs e)
-        {
+            string recherche = RechercheCoursePTB.Text;
             CoursesLB.Items.Clear();
-            CoursesLB.Items.AddRange(_courses.Where(c => c.Nom.ContientAuMoins(RechercheCourseTB.Text) || c.Annee.ToString().ContientAuMoins(RechercheCourseTB.Text)).ToArray());
+            CoursesLB.Items.AddRange(_courses.Where(c => c.Nom.ContientAuMoins(recherche) || c.Annee.ToString().ContientAuMoins(recherche)).ToArray());
             if (CoursesLB.Items.Count > 0)
                 CoursesLB.SelectedIndex = 0;
+        }
+
+        private void RechercheParticipantPTB_KeyUp(object sender, KeyEventArgs e)
+        {
+            string recherche = RechercheParticipantPTB.Text;
+            ParticipantsDGV.DataSource = _course_actuelle.Participations.Where(p => p.Coureur.Nom.ContientAuMoins(recherche) || p.Coureur.Prenom.ContientAuMoins(recherche) || p.NumeroDeDossard.ToString().ContientAuMoins(recherche)).ToList();
+        }
+
+        private void DateMTB_Enter(object sender, EventArgs e)
+        {
+            DateCal.Visible = true;
+        }
+
+        private void DateMTB_Leave(object sender, EventArgs e)
+        {
+            if (!DateCal.Focused)
+                DateCal.Visible = false;
+        }
+
+        private void DateMTB_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (DateMTB.MaskFull)
+            {
+                string[] dateStr = DateMTB.Text.Split('/');
+                DateTime date = new DateTime(Convert.ToInt32(dateStr[2]), Convert.ToInt32(dateStr[1]), Convert.ToInt32(dateStr[0]));
+                DateCal.SetSelectionRange(date, date);
+            }
+        }
+
+        private void DateCal_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateTime date = DateCal.SelectionRange.Start;
+            DateMTB.Text = date.ToString("dd/MM/yyyy");
+        }
+
+        private void DateCal_Leave(object sender, EventArgs e)
+        {
+            if (!DateMTB.Focused)
+                DateCal.Visible = false;
         }
     }
 }

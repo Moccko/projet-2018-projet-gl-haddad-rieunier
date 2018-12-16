@@ -65,6 +65,12 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreerCoureur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreerCoureur.Designer.cs">
+      <DependentUpon>CreerCoureur.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreerCourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreerCoureur.resx">
+      <DependentUpon>CreerCoureur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreerCourse.resx">
       <DependentUpon>CreerCourse.cs</DependentUpon>

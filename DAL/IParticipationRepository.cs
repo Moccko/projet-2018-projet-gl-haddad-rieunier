@@ -12,5 +12,7 @@ namespace DAL
         void Save(Participation p);
         void Save(List<Participation> l);
         void Delete(Participation p);
+        List<Participation> GetByCoureur(Coureur c);
+        List<Participation> GetByCourse(Course c);
     }
 }

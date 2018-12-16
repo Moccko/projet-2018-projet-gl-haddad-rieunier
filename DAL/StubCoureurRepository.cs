@@ -31,10 +31,13 @@ namespace DAL
         private StubCoureurRepository()
         {
             _coureurs = new List<Coureur>();
-            _coureurs.Add(new Coureur(1997, "rrieunier@ensc.fr", "Rieunier", "Roman", 'M', "187445", new List<Participation>()));
-            _coureurs.Add(new Coureur(1996, "rhaddad@ensc.fr", "Haddad", "Rime", 'F', "751667", new List<Participation>()));
-            _coureurs.Add(new Coureur(2001, "chaddad@ensc.fr", "Haddad", "Chirine", 'F', "456769", new List<Participation>()));
-            _coureurs.Add(new Coureur(1996, "nhaddad@ensc.fr", "Haddad", "Nour", 'F', "649372", new List<Participation>()));
+            Random r = new Random();
+            int maxLicence = 10000000;
+            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            _coureurs.Add(new Coureur("Roman", "Rieunier", 'M', new DateTime(1997, 9, 22), "rrieunier@ensc.fr", $"{r.Next(maxLicence)}{alphabet[r.Next(alphabet.Length)]}"));
+            _coureurs.Add(new Coureur("Rime", "Haddad", 'F', new DateTime(1996, 6, 19), "rhaddad@ensc.fr", $"{r.Next(maxLicence)}{alphabet[r.Next(alphabet.Length)]}"));
+            _coureurs.Add(new Coureur("Lucas", "Dutournier", 'M', new DateTime(1997, 3, 17), "ldutournier@ensc.fr", $"{r.Next(maxLicence)}{alphabet[r.Next(alphabet.Length)]}"));
+            _coureurs.Add(new Coureur("Antoine", "Loizel", 'M', new DateTime(1996, 12, 14), "nhaddad@ensc.fr", $"{r.Next(maxLicence)}{alphabet[r.Next(alphabet.Length)]}"));
         }
 
         public List<Coureur> GetAll()

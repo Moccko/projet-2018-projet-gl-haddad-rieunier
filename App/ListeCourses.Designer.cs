@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CoursesLB = new System.Windows.Forms.ListBox();
             this.NomLb = new System.Windows.Forms.Label();
             this.NomTB = new System.Windows.Forms.TextBox();
-            this.AnneeMTB = new System.Windows.Forms.MaskedTextBox();
-            this.AnneeLb = new System.Windows.Forms.Label();
+            this.DateLb = new System.Windows.Forms.Label();
             this.ListeParticipantsLb = new System.Windows.Forms.Label();
             this.EnregistrerBtn = new System.Windows.Forms.Button();
             this.CreerCourseBtn = new System.Windows.Forms.Button();
@@ -49,8 +48,11 @@
             this.AjouterParticipantBtn = new System.Windows.Forms.Button();
             this.SupprimerParticipantBtn = new System.Windows.Forms.Button();
             this.ImporterCourseBtn = new System.Windows.Forms.Button();
-            this.RechercheParticipantTB = new System.Windows.Forms.TextBox();
-            this.RechercheCourseTB = new System.Windows.Forms.TextBox();
+            this.SupprimerCourseBtn = new System.Windows.Forms.Button();
+            this.DateMTB = new System.Windows.Forms.MaskedTextBox();
+            this.DateCal = new System.Windows.Forms.MonthCalendar();
+            this.RechercheCoursePTB = new App.PlaceholderTextBox();
+            this.RechercheParticipantPTB = new App.PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ParticipantsDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,50 +72,39 @@
             // 
             // NomLb
             // 
+            this.NomLb.AutoSize = true;
             this.NomLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomLb.Location = new System.Drawing.Point(259, 13);
+            this.NomLb.Location = new System.Drawing.Point(263, 15);
             this.NomLb.Name = "NomLb";
-            this.NomLb.Size = new System.Drawing.Size(164, 23);
+            this.NomLb.Size = new System.Drawing.Size(146, 19);
             this.NomLb.TabIndex = 1;
             this.NomLb.Text = "Nom de la course";
             this.NomLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // NomTB
             // 
-            this.NomTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NomTB.Location = new System.Drawing.Point(434, 16);
+            this.NomTB.Location = new System.Drawing.Point(267, 37);
             this.NomTB.Name = "NomTB";
-            this.NomTB.Size = new System.Drawing.Size(233, 20);
+            this.NomTB.Size = new System.Drawing.Size(263, 20);
             this.NomTB.TabIndex = 2;
             this.NomTB.TextChanged += new System.EventHandler(this.NomTB_TextChanged);
             // 
-            // AnneeMTB
+            // DateLb
             // 
-            this.AnneeMTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AnneeMTB.Location = new System.Drawing.Point(434, 60);
-            this.AnneeMTB.Mask = "2099";
-            this.AnneeMTB.Name = "AnneeMTB";
-            this.AnneeMTB.Size = new System.Drawing.Size(233, 20);
-            this.AnneeMTB.TabIndex = 3;
-            this.AnneeMTB.TextChanged += new System.EventHandler(this.AnneeMTB_TextChanged);
-            // 
-            // AnneeLb
-            // 
-            this.AnneeLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AnneeLb.Location = new System.Drawing.Point(263, 57);
-            this.AnneeLb.Name = "AnneeLb";
-            this.AnneeLb.Size = new System.Drawing.Size(160, 23);
-            this.AnneeLb.TabIndex = 4;
-            this.AnneeLb.Text = "Année de la course";
-            this.AnneeLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DateLb.AutoSize = true;
+            this.DateLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateLb.Location = new System.Drawing.Point(532, 15);
+            this.DateLb.Name = "DateLb";
+            this.DateLb.Size = new System.Drawing.Size(145, 19);
+            this.DateLb.TabIndex = 4;
+            this.DateLb.Text = "Date de la course";
+            this.DateLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ListeParticipantsLb
             // 
             this.ListeParticipantsLb.AutoSize = true;
             this.ListeParticipantsLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListeParticipantsLb.Location = new System.Drawing.Point(263, 109);
+            this.ListeParticipantsLb.Location = new System.Drawing.Point(263, 74);
             this.ListeParticipantsLb.Name = "ListeParticipantsLb";
             this.ListeParticipantsLb.Size = new System.Drawing.Size(184, 19);
             this.ListeParticipantsLb.TabIndex = 6;
@@ -139,9 +130,9 @@
             this.CreerCourseBtn.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreerCourseBtn.Location = new System.Drawing.Point(12, 320);
             this.CreerCourseBtn.Name = "CreerCourseBtn";
-            this.CreerCourseBtn.Size = new System.Drawing.Size(91, 39);
+            this.CreerCourseBtn.Size = new System.Drawing.Size(39, 39);
             this.CreerCourseBtn.TabIndex = 8;
-            this.CreerCourseBtn.Text = "Créer";
+            this.CreerCourseBtn.Text = "+";
             this.CreerCourseBtn.UseVisualStyleBackColor = true;
             this.CreerCourseBtn.Click += new System.EventHandler(this.CreerCourseBtn_Click);
             // 
@@ -151,14 +142,14 @@
             this.ParticipantsDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ParticipantsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ParticipantsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ParticipantsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ParticipantsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Course,
@@ -167,25 +158,25 @@
             this.Temps,
             this.AllureMoyenne,
             this.VitesseMoyenne});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ParticipantsDGV.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ParticipantsDGV.Location = new System.Drawing.Point(267, 158);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ParticipantsDGV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ParticipantsDGV.Location = new System.Drawing.Point(267, 125);
             this.ParticipantsDGV.Name = "ParticipantsDGV";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ParticipantsDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.ParticipantsDGV.Size = new System.Drawing.Size(400, 156);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ParticipantsDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.ParticipantsDGV.Size = new System.Drawing.Size(400, 189);
             this.ParticipantsDGV.TabIndex = 5;
             this.ParticipantsDGV.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.ParticipantsDGV_CellBeginEdit);
             // 
@@ -227,8 +218,9 @@
             // 
             // AjouterParticipantBtn
             // 
+            this.AjouterParticipantBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AjouterParticipantBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AjouterParticipantBtn.Location = new System.Drawing.Point(613, 128);
+            this.AjouterParticipantBtn.Location = new System.Drawing.Point(613, 95);
             this.AjouterParticipantBtn.Name = "AjouterParticipantBtn";
             this.AjouterParticipantBtn.Size = new System.Drawing.Size(24, 24);
             this.AjouterParticipantBtn.TabIndex = 10;
@@ -238,8 +230,9 @@
             // 
             // SupprimerParticipantBtn
             // 
+            this.SupprimerParticipantBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SupprimerParticipantBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SupprimerParticipantBtn.Location = new System.Drawing.Point(643, 128);
+            this.SupprimerParticipantBtn.Location = new System.Drawing.Point(643, 95);
             this.SupprimerParticipantBtn.Name = "SupprimerParticipantBtn";
             this.SupprimerParticipantBtn.Size = new System.Drawing.Size(24, 24);
             this.SupprimerParticipantBtn.TabIndex = 11;
@@ -251,43 +244,78 @@
             // 
             this.ImporterCourseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ImporterCourseBtn.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ImporterCourseBtn.Location = new System.Drawing.Point(109, 320);
+            this.ImporterCourseBtn.Location = new System.Drawing.Point(102, 320);
             this.ImporterCourseBtn.Name = "ImporterCourseBtn";
-            this.ImporterCourseBtn.Size = new System.Drawing.Size(124, 39);
+            this.ImporterCourseBtn.Size = new System.Drawing.Size(131, 39);
             this.ImporterCourseBtn.TabIndex = 12;
             this.ImporterCourseBtn.Text = "Importer";
             this.ImporterCourseBtn.UseVisualStyleBackColor = true;
             this.ImporterCourseBtn.Click += new System.EventHandler(this.ImporterCourseBtn_Click);
             // 
-            // RechercheParticipantTB
+            // SupprimerCourseBtn
             // 
-            this.RechercheParticipantTB.Location = new System.Drawing.Point(267, 131);
-            this.RechercheParticipantTB.Name = "RechercheParticipantTB";
-            this.RechercheParticipantTB.Size = new System.Drawing.Size(340, 20);
-            this.RechercheParticipantTB.TabIndex = 13;
-            this.RechercheParticipantTB.Text = "Rechercher un participant";
-            this.RechercheParticipantTB.Enter += new System.EventHandler(this.RechercheParticipantTB_Enter);
-            this.RechercheParticipantTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RechercheParticipantTB_KeyUp);
-            this.RechercheParticipantTB.Leave += new System.EventHandler(this.RechercheParticipantTB_Leave);
+            this.SupprimerCourseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SupprimerCourseBtn.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupprimerCourseBtn.Location = new System.Drawing.Point(57, 320);
+            this.SupprimerCourseBtn.Name = "SupprimerCourseBtn";
+            this.SupprimerCourseBtn.Size = new System.Drawing.Size(39, 39);
+            this.SupprimerCourseBtn.TabIndex = 15;
+            this.SupprimerCourseBtn.Text = "-";
+            this.SupprimerCourseBtn.UseVisualStyleBackColor = true;
             // 
-            // RechercheCourseTB
+            // DateMTB
             // 
-            this.RechercheCourseTB.Location = new System.Drawing.Point(13, 16);
-            this.RechercheCourseTB.Name = "RechercheCourseTB";
-            this.RechercheCourseTB.Size = new System.Drawing.Size(220, 20);
-            this.RechercheCourseTB.TabIndex = 14;
-            this.RechercheCourseTB.Text = "Rechercher une course";
-            this.RechercheCourseTB.Enter += new System.EventHandler(this.RechercheCourseTB_Enter);
-            this.RechercheCourseTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RechercheCourseTB_KeyUp);
-            this.RechercheCourseTB.Leave += new System.EventHandler(this.RechercheCourseTB_Leave);
+            this.DateMTB.Location = new System.Drawing.Point(536, 37);
+            this.DateMTB.Mask = "00/00/0000";
+            this.DateMTB.Name = "DateMTB";
+            this.DateMTB.Size = new System.Drawing.Size(130, 20);
+            this.DateMTB.TabIndex = 18;
+            this.DateMTB.ValidatingType = typeof(System.DateTime);
+            this.DateMTB.Enter += new System.EventHandler(this.DateMTB_Enter);
+            this.DateMTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DateMTB_KeyUp);
+            this.DateMTB.Leave += new System.EventHandler(this.DateMTB_Leave);
+            // 
+            // DateCal
+            // 
+            this.DateCal.Location = new System.Drawing.Point(440, 60);
+            this.DateCal.Name = "DateCal";
+            this.DateCal.TabIndex = 19;
+            this.DateCal.Visible = false;
+            this.DateCal.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.DateCal_DateChanged);
+            this.DateCal.Leave += new System.EventHandler(this.DateCal_Leave);
+            // 
+            // RechercheCoursePTB
+            // 
+            this.RechercheCoursePTB.Location = new System.Drawing.Point(13, 16);
+            this.RechercheCoursePTB.Name = "RechercheCoursePTB";
+            this.RechercheCoursePTB.Placeholder = "Rechercher une course";
+            this.RechercheCoursePTB.Size = new System.Drawing.Size(220, 20);
+            this.RechercheCoursePTB.TabIndex = 17;
+            this.RechercheCoursePTB.Text = "Rechercher une course";
+            this.RechercheCoursePTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RechercheCoursePTB_KeyUp);
+            // 
+            // RechercheParticipantPTB
+            // 
+            this.RechercheParticipantPTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RechercheParticipantPTB.Location = new System.Drawing.Point(267, 96);
+            this.RechercheParticipantPTB.Name = "RechercheParticipantPTB";
+            this.RechercheParticipantPTB.Placeholder = "Rechercher un participant";
+            this.RechercheParticipantPTB.Size = new System.Drawing.Size(340, 20);
+            this.RechercheParticipantPTB.TabIndex = 16;
+            this.RechercheParticipantPTB.Text = "Rechercher un participant";
+            this.RechercheParticipantPTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RechercheParticipantPTB_KeyUp);
             // 
             // ListeCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 370);
-            this.Controls.Add(this.RechercheCourseTB);
-            this.Controls.Add(this.RechercheParticipantTB);
+            this.Controls.Add(this.DateCal);
+            this.Controls.Add(this.DateMTB);
+            this.Controls.Add(this.RechercheCoursePTB);
+            this.Controls.Add(this.RechercheParticipantPTB);
+            this.Controls.Add(this.SupprimerCourseBtn);
             this.Controls.Add(this.ImporterCourseBtn);
             this.Controls.Add(this.SupprimerParticipantBtn);
             this.Controls.Add(this.AjouterParticipantBtn);
@@ -295,8 +323,7 @@
             this.Controls.Add(this.EnregistrerBtn);
             this.Controls.Add(this.ListeParticipantsLb);
             this.Controls.Add(this.ParticipantsDGV);
-            this.Controls.Add(this.AnneeLb);
-            this.Controls.Add(this.AnneeMTB);
+            this.Controls.Add(this.DateLb);
             this.Controls.Add(this.NomTB);
             this.Controls.Add(this.NomLb);
             this.Controls.Add(this.CoursesLB);
@@ -313,8 +340,7 @@
         private System.Windows.Forms.ListBox CoursesLB;
         private System.Windows.Forms.Label NomLb;
         private System.Windows.Forms.TextBox NomTB;
-        private System.Windows.Forms.MaskedTextBox AnneeMTB;
-        private System.Windows.Forms.Label AnneeLb;
+        private System.Windows.Forms.Label DateLb;
         private System.Windows.Forms.Label ListeParticipantsLb;
         private System.Windows.Forms.Button EnregistrerBtn;
         private System.Windows.Forms.Button CreerCourseBtn;
@@ -328,7 +354,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Temps;
         private System.Windows.Forms.DataGridViewTextBoxColumn AllureMoyenne;
         private System.Windows.Forms.DataGridViewTextBoxColumn VitesseMoyenne;
-        private System.Windows.Forms.TextBox RechercheParticipantTB;
-        private System.Windows.Forms.TextBox RechercheCourseTB;
+        private System.Windows.Forms.Button SupprimerCourseBtn;
+        private PlaceholderTextBox RechercheParticipantPTB;
+        private PlaceholderTextBox RechercheCoursePTB;
+        private System.Windows.Forms.MaskedTextBox DateMTB;
+        private System.Windows.Forms.MonthCalendar DateCal;
     }
 }

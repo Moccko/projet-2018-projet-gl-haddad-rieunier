@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 08 déc. 2018 à 16:51
+-- Généré le :  Dim 16 déc. 2018 à 18:19
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  5.6.35
 
@@ -25,15 +25,14 @@ USE `lagestiondecoursespourlesnuls`;
 --
 
 DROP TABLE IF EXISTS `coureur`;
-CREATE TABLE IF NOT EXISTS `coureur` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `coureur` (
+  `id` int(11) NOT NULL,
   `annee` int(11) NOT NULL,
   `courriel` varchar(256) COLLATE utf8_bin NOT NULL,
   `nom` varchar(256) COLLATE utf8_bin NOT NULL,
   `prenom` varchar(256) COLLATE utf8_bin NOT NULL,
   `sexe` char(1) COLLATE utf8_bin NOT NULL,
-  `noLicenceFFA` varchar(30) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
+  `noLicenceFFA` char(8) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -43,11 +42,10 @@ CREATE TABLE IF NOT EXISTS `coureur` (
 --
 
 DROP TABLE IF EXISTS `course`;
-CREATE TABLE IF NOT EXISTS `course` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `course` (
+  `id` int(11) NOT NULL,
   `Nom` varchar(256) COLLATE utf8_bin NOT NULL,
-  `Annee` smallint(4) NOT NULL,
-  PRIMARY KEY (`id`)
+  `Annee` smallint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -57,15 +55,13 @@ CREATE TABLE IF NOT EXISTS `course` (
 --
 
 DROP TABLE IF EXISTS `participation`;
-CREATE TABLE IF NOT EXISTS `participation` (
+CREATE TABLE `participation` (
   `course` int(11) NOT NULL,
   `coureur` int(11) NOT NULL,
   `allureMoyenne` double NOT NULL,
   `numeroDossard` int(11) NOT NULL,
   `temps` varchar(10) COLLATE utf8_bin NOT NULL,
-  `vitesseMoyenne` double NOT NULL,
-  PRIMARY KEY (`course`,`coureur`),
-  KEY `coureur` (`coureur`)
+  `vitesseMoyenne` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -75,15 +71,65 @@ CREATE TABLE IF NOT EXISTS `participation` (
 --
 
 DROP TABLE IF EXISTS `utilisateur`;
-CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `utilisateur` (
+  `id` int(11) NOT NULL,
   `nom` varchar(100) COLLATE utf8_bin NOT NULL,
   `motDePasse` varchar(255) COLLATE utf8_bin NOT NULL,
-  `courriel` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `nom` (`nom`),
-  UNIQUE KEY `courriel` (`courriel`)
+  `courriel` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `coureur`
+--
+ALTER TABLE `coureur`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `course`
+--
+ALTER TABLE `course`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `participation`
+--
+ALTER TABLE `participation`
+  ADD PRIMARY KEY (`course`,`coureur`),
+  ADD KEY `coureur` (`coureur`);
+
+--
+-- Index pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nom` (`nom`),
+  ADD UNIQUE KEY `courriel` (`courriel`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `coureur`
+--
+ALTER TABLE `coureur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `course`
+--
+ALTER TABLE `course`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées

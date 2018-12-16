@@ -8,25 +8,24 @@ namespace DAL
 {
     public class Coureur
     {
-        public virtual int Annee { get; set; }
-        public virtual string Courriel { get; set; }
-        public virtual string Nom { get; set; }
         public virtual string Prenom { get; set; }
+        public virtual string Nom { get; set; }
         public virtual char Sexe { get; set; }
+        public virtual DateTime DateNaissance { get; set; }
+        public virtual string Courriel { get; set; }
         public virtual string NoLicenceFFA { get; set; }
-        public virtual List<Participation> Participations { get; set; }
+        public List<Participation> Participations { get { return StubParticipationRepository.Instance.GetByCoureur(this).ToList(); } }
 
         public Coureur() { }
 
-        public Coureur(int annee, string courriel, string nom, string prenom, char sexe, string noLicenceFFA, List<Participation> participations)
+        public Coureur(string prenom, string nom, char sexe, DateTime naissance, string courriel, string noLicenceFFA)
         {
-            Annee = annee;
-            Courriel = courriel;
-            Nom = nom;
             Prenom = prenom;
+            Nom = nom;
             Sexe = sexe;
+            DateNaissance = naissance;
+            Courriel = courriel;
             NoLicenceFFA = noLicenceFFA;
-            Participations = participations;
         }
 
         public override string ToString()

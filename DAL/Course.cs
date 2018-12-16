@@ -9,23 +9,15 @@ namespace DAL
     public class Course
     {
         public virtual string Nom { get; set; }
-        public virtual int Annee { get; set; }
-        public virtual List<Participation> Participations { get; set; }
+        public virtual DateTime Annee { get; set; }
+        public virtual List<Participation> Participations { get { return StubParticipationRepository.Instance.GetByCourse(this).ToList(); } }
 
         public Course() { }
 
-        public Course(string nom, int annee)
+        public Course(string nom, DateTime annee)
         {
             Nom = nom;
             Annee = annee;
-            Participations = new List<Participation>();
-        }
-
-        public Course(string nom, int annee, List<Participation> participations)
-        {
-            Nom = nom;
-            Annee = annee;
-            Participations = participations;
         }
 
         public override string ToString()

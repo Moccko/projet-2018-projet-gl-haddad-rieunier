@@ -14,7 +14,7 @@ namespace App
     {
         public string NomCourse { get { return NomTB.Text; } }
 
-        public int AnneeCourse { get { return Convert.ToInt32(AnneeMTB.Text); } }
+        public DateTime DateCourse { get { return DateCal.SelectionStart; } }
 
         public CreerCourse()
         {
@@ -23,12 +23,28 @@ namespace App
 
         private void NomTB_TextChanged(object sender, EventArgs e)
         {
-            ValiderBtn.Enabled = NomTB.TextLength > 0 && AnneeMTB.MaskCompleted;
+            ValiderBtn.Enabled = NomTB.TextLength > 0 && DateMTB.MaskCompleted;
         }
 
         private void AnneeMTB_TextChanged(object sender, EventArgs e)
         {
-            ValiderBtn.Enabled = AnneeMTB.MaskCompleted && NomTB.TextLength > 0;
+            ValiderBtn.Enabled = DateMTB.MaskCompleted && NomTB.TextLength > 0;
+        }
+
+        private void DateMTB_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (DateMTB.MaskFull)
+            {
+                string[] dateStr = DateMTB.Text.Split('/');
+                DateTime date = new DateTime(Convert.ToInt32(dateStr[2]), Convert.ToInt32(dateStr[1]), Convert.ToInt32(dateStr[0]));
+                DateCal.SetSelectionRange(date, date);
+            }
+        }
+
+        private void DateCal_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateTime date = DateCal.SelectionRange.Start;
+            DateMTB.Text = date.ToString("dd/MM/yyyy");
         }
     }
 }
