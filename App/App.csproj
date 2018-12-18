@@ -59,6 +59,18 @@
     <Compile Include="AjouterParticipant.Designer.cs">
       <DependentUpon>AjouterParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassementGlobal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassementGlobal.Designer.cs">
+      <DependentUpon>ClassementGlobal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassementTrancheAge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassementTrancheAge.Designer.cs">
+      <DependentUpon>ClassementTrancheAge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
       <DependentUpon>CreerCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions.cs" />
+    <Compile Include="ImporterCoureurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImporterCoureurs.Designer.cs">
+      <DependentUpon>ImporterCoureurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImporterParticipations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +126,12 @@
     <EmbeddedResource Include="AjouterParticipant.resx">
       <DependentUpon>AjouterParticipant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClassementGlobal.resx">
+      <DependentUpon>ClassementGlobal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassementTrancheAge.resx">
+      <DependentUpon>ClassementTrancheAge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreerCourse.resx">
       <DependentUpon>CreerCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImporterCoureurs.resx">
+      <DependentUpon>ImporterCoureurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImporterParticipations.resx">
       <DependentUpon>ImporterParticipations.cs</DependentUpon>

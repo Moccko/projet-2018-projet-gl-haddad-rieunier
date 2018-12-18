@@ -23,6 +23,11 @@ namespace DAL
             throw new NotImplementedException();
         }
 
+        public void Save(List<Coureur> l)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Coureur c)
         {
             throw new NotImplementedException();

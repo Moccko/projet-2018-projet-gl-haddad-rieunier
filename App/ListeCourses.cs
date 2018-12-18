@@ -149,5 +149,17 @@ namespace App
             if (!DateMTB.Focused)
                 DateCal.Visible = false;
         }
+
+        private void ClassementGlobalBtn_Click(object sender, EventArgs e)
+        {
+            ClassementGlobal form = new ClassementGlobal(_course_actuelle);
+            if (form.ShowDialog() == DialogResult.Cancel) { }
+        }
+
+        private void ClassementTrancheAgeBtn_Click(object sender, EventArgs e)
+        {
+            ClassementTrancheAge form = new ClassementTrancheAge(_course_actuelle);
+            if (form.ShowDialog() == DialogResult.Cancel) { }
+        }
     }
 }

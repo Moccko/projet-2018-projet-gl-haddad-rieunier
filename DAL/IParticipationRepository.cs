@@ -14,5 +14,7 @@ namespace DAL
         void Delete(Participation p);
         List<Participation> GetByCoureur(Coureur c);
         List<Participation> GetByCourse(Course c);
+        Participation[] GetClassement(Course c);
+        Participation[] GetClassement(Course c, int[] tAge);
     }
 }

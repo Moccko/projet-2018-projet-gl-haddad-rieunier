@@ -38,5 +38,15 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
+
+        public Participation[] GetClassement(Course c)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Participation[] GetClassement(Course c, int[] tAge)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -80,6 +80,7 @@
     <Compile Include="CourseRepository.cs" />
     <Compile Include="ICoureurRepository.cs" />
     <Compile Include="ICourseRepository.cs" />
+    <Compile Include="ImportCoureurs.cs" />
     <Compile Include="ImportParticipations.cs" />
     <Compile Include="IParticipationRepository.cs" />
     <Compile Include="IUtilisateurRepository.cs" />

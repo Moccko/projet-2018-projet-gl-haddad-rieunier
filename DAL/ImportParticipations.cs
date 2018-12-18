@@ -37,7 +37,16 @@ namespace DAL
                     return 0;
                 }
 
-                nouvellesParticipations.Add(new Participation(_course, coureur, Convert.ToInt32(line["dossard"]), line["temps"]));
+                // Au cas où la conversion en entier serait impossible
+                try
+                {
+                    nouvellesParticipations.Add(new Participation(_course, coureur, Convert.ToInt32(line["dossard"]), line["temps"]));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return 0;
+                }
             }
             _participation_repository.Save(nouvellesParticipations);
 

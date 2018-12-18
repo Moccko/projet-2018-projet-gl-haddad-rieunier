@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="9f9e1d21-0d02-418c-bd61-ad92d98b70f4"
   name="Modelisation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -12,58 +12,6 @@
         isLeaf="false"
         isActiveClass="false">
         <targetEnds>
-          <association
-            Id="18b4376c-1427-4f9c-843c-23c14ff37d15"
-            isDerived="false"
-            sourceEndRoleName="Participant"
-            targetEndRoleName="Participation"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="18424086-e3c1-42eb-a6e3-11a5a4db1be2"
-              LastKnownName="Participation"
-              LastKnownLocation="Modelisation.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e47eb5d1-aaad-4825-8337-bf14b7806228"
-                  name="Participant"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="c4baece0-9d57-4c24-b1f9-6445a1c9011e"
-                  name="Participation"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="4d7b24d9-e0ef-4dd4-8aa9-2677bacbc477"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="6e7aeacd-d0fa-453b-a482-c414a420df4d"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
           <association
             Id="a8b1c267-94f6-4a03-ac8c-fdc14080fee5"
             isDerived="false"
@@ -133,7 +81,8 @@
         <ownedAttributesInternal>
           <property
             Id="e21e9ef6-becf-481b-8977-fdda2323ec4a"
-            name="Nom"
+            name="nom"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -151,7 +100,8 @@
           </property>
           <property
             Id="5b0881f6-b5a4-4dc6-a035-c0c9476a455f"
-            name="AnneeDeNaissance"
+            name="date_naissance"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -169,7 +119,8 @@
           </property>
           <property
             Id="7535db91-a8a1-49a8-a54b-5f769399e74b"
-            name="Prenom"
+            name="prenom"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -187,7 +138,8 @@
           </property>
           <property
             Id="47b07f1a-688a-4e22-a9b8-2983263fc9b5"
-            name="Sexe"
+            name="sexe"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -205,7 +157,8 @@
           </property>
           <property
             Id="837e168b-f3c1-4296-b76a-13afd8868bec"
-            name="Courriel"
+            name="courriel"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -223,7 +176,8 @@
           </property>
           <property
             Id="859799af-b292-42c8-8d6a-4b391b2d54e2"
-            name="NoLicenceFFA"
+            name="no_licence_ffa"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -239,90 +193,9 @@
                 LastKnownLocation="Modelisation.uml" />
             </type_NamedElement>
           </property>
-        </ownedAttributesInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="767eda56-094c-4f47-aa7b-946be6507f91"
-        name="Utilisateur"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="a63c1417-30a8-4463-92d1-469dd9ade95c"
-        name="Sponsor"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="764a881f-5c0c-4dde-ae97-ffc947ad9fa6"
-        name="Course"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="2673630a-7a3b-44f1-8999-80712a514562"
-            isDerived="false"
-            sourceEndRoleName="Course"
-            targetEndRoleName="Participation"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="18424086-e3c1-42eb-a6e3-11a5a4db1be2"
-              LastKnownName="Participation"
-              LastKnownLocation="Modelisation.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="600536e5-a938-4025-9202-a88154166aa0"
-                  name="Course"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b7eca83c-2dbf-4fa4-baf9-2859d1f335b5"
-                  name="Participation"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="ba9fb825-a500-4872-9829-46b1354b1fb0"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="b925f76d-9531-4cbe-b867-334577338317"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
-        <ownedAttributesInternal>
           <property
-            Id="8191f40d-9644-49e0-89bb-f71d31458390"
-            name="Annee"
+            Id="9eabd3eb-6652-44a2-9372-6e928faf89ae"
+            name="Age"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -343,15 +216,299 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
-        Id="18424086-e3c1-42eb-a6e3-11a5a4db1be2"
-        name="Participation"
+        Id="767eda56-094c-4f47-aa7b-946be6507f91"
+        name="Utilisateur"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="b92122ce-f8ce-42b9-9e32-bec2fa42687a">
+            <classMoniker
+              Id="764a881f-5c0c-4dde-ae97-ffc947ad9fa6"
+              LastKnownName="Course"
+              LastKnownLocation="Modelisation.uml" />
+          </dependency>
+          <dependency
+            Id="dc07c01e-1212-4165-8c53-76c7a5b732cf">
+            <classMoniker
+              Id="18424086-e3c1-42eb-a6e3-11a5a4db1be2"
+              LastKnownName="Participation"
+              LastKnownLocation="Modelisation.uml" />
+          </dependency>
+          <dependency
+            Id="ddd531b3-70b8-4e30-9c78-5c48fa39683f">
+            <classMoniker
+              Id="5c0ee810-c119-4b1a-808d-efa64f35178c"
+              LastKnownName="Coureur"
+              LastKnownLocation="Modelisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="a04510da-6e4b-4bf3-9e94-f5e5c3edfdd9"
+            name="courriel"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="Modelisation.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5ce1a997-5e7b-4be8-a0c6-73c33490c884"
+            name="mot_de_passe"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="Modelisation.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="33b18fdd-3a19-4ad8-b805-ec07b3049db9"
+            name="nom"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="Modelisation.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c7078939-8370-4d16-b88a-30444ed041ae"
+            name="prenom"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="Modelisation.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a63c1417-30a8-4463-92d1-469dd9ade95c"
+        name="Sponsor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="764a881f-5c0c-4dde-ae97-ffc947ad9fa6"
+        name="Course"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <ownedAttributesInternal>
           <property
+            Id="8191f40d-9644-49e0-89bb-f71d31458390"
+            name="date"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7e98aab9-6e07-4837-a393-b753622016b7"
+                LastKnownName="DateTime"
+                LastKnownLocation="Modelisation.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e02a9ba5-cfab-4fdb-acf6-066967352e1b"
+            name="nom"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="Modelisation.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="18424086-e3c1-42eb-a6e3-11a5a4db1be2"
+        name="Participation"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="732cb9b0-8fad-4aef-831f-48d90bfbbbce"
+            isDerived="false"
+            sourceEndRoleName="Participation"
+            targetEndRoleName="Coureur"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5c0ee810-c119-4b1a-808d-efa64f35178c"
+              LastKnownName="Coureur"
+              LastKnownLocation="Modelisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6fe9cad8-2ebc-4235-b8dc-50c3e07b5310"
+                  name="Participation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c475849d-1686-4430-8fdb-7cc0cce61253"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="de27ce11-caaf-4a26-9885-ff5e7f8db148"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b590a796-93f1-4cc0-9824-f8245fc4235d"
+                  name="Coureur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2174d0fe-d1cc-4335-8b1c-48987f6f93a3"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5f212b41-e9b8-4542-a6cb-6b27f8017921"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="640a04b6-9ddc-46a3-b930-3b79cbc9622f"
+            isDerived="false"
+            sourceEndRoleName="Participation"
+            targetEndRoleName="Course"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="764a881f-5c0c-4dde-ae97-ffc947ad9fa6"
+              LastKnownName="Course"
+              LastKnownLocation="Modelisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="93ab5e8a-7140-4aaf-99dd-f2495cd76722"
+                  name="Participation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e117e887-0310-4561-8d09-90064b2acd89"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ae7745ab-caa3-43f1-8094-2e06dec83f24"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e91d5411-7fc7-4d06-886c-22d7b87fc180"
+                  name="Course"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
             Id="421661ce-e365-4a14-9b61-cedf7bffef9c"
-            name="NumeroDossard"
+            name="numero_dossard"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -369,7 +526,8 @@
           </property>
           <property
             Id="3e668b84-01da-436e-a047-6cedcc9c5ca4"
-            name="Temps"
+            name="temps"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -387,7 +545,8 @@
           </property>
           <property
             Id="4f3a1a2f-d5c7-4a36-a45a-2c7f14feec59"
-            name="VitesseMoyenne"
+            name="vitesse_moyenne"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -405,7 +564,8 @@
           </property>
           <property
             Id="13e13e8e-912c-4365-b505-d5890b32bfc2"
-            name="AllureMoyenne"
+            name="allure_moyenne"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2772,6 +2932,126 @@
       <executionEvent
         Id="230d3a9e-2774-4d64-b95e-cb5dcdbb5294"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b799a1cd-1e87-42f8-926d-1fef8185175c"
+        name="&lt;&lt;static&gt;&gt; UtilisateurActuel"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="0cd82063-5acd-4de3-8479-5c62605caff7"
+            isDerived="false"
+            sourceEndRoleName="UtilisateurActuel"
+            targetEndRoleName="Utilisateur"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="767eda56-094c-4f47-aa7b-946be6507f91"
+              LastKnownName="Utilisateur"
+              LastKnownLocation="Modelisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bc1cbd0a-7138-4783-bf0f-271b3eeded91"
+                  name="UtilisateurActuel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e905799b-712a-4e78-bdb1-04fa0d641105"
+                  name="Utilisateur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="7f7e1d89-d0c4-433e-9436-cdc43bb99192"
+            name="Connexion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a6dd783f-e9e4-4124-8a40-7bf6de66fd37"
+                  name="courriel"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Modelisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="98c71a6c-50dd-48c7-979d-74303c9f2413"
+                  name="mdp"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Modelisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="91778b95-6d11-48eb-a9f9-8ba18985aaf0"
+            name="Deconnexion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="66e706b6-9bba-48e6-a3a6-daf0195f756c"
+            name="EstConnecte"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="856246d0-58e2-4e92-b1c1-ead1dfe76f34"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Modelisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

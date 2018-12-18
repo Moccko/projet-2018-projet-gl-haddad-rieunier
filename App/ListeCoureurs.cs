@@ -98,5 +98,20 @@ namespace App
                 CoureursLB.SelectedIndex = index;
             }
         }
+
+        private void ImporterCoureursBtn_Click(object sender, EventArgs e)
+        {
+            ImporterCoureurs form = new ImporterCoureurs();
+            if (form.ShowDialog() == DialogResult.Cancel)
+            {
+                int index = CoureursLB.SelectedIndex;
+                _coureurs = _coureurRepository.GetAll();
+                CoureursLB.Items.Clear();
+                CoureursLB.Items.AddRange(_coureurs.Select(course => course.ToString()).ToArray());
+                CoureursLB.SelectedIndex = 0;
+                CoureursLB.SelectedIndex = index;
+                EnregistrerBtn.Enabled = false;
+            }
+        }
     }
 }

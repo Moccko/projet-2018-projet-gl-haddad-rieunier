@@ -59,12 +59,22 @@ namespace DAL
 
         public List<Participation> GetByCoureur(Coureur c)
         {
-            return GetAll().Where(p => p.Coureur == c).ToList();
+            return GetAll().Where(p => p.Coureur == c).OrderBy(p => p.Course.Nom).ThenBy(p => p.Course.Annee).ToList();
         }
 
         public List<Participation> GetByCourse(Course c)
         {
-            return GetAll().Where(p => p.Course == c).ToList();
+            return GetAll().Where(p => p.Course == c).OrderBy(p => p.Coureur.Nom).ThenBy(p => p.Coureur.Prenom).ToList();
+        }
+
+        public Participation[] GetClassement(Course c)
+        {
+            return GetByCourse(c).OrderBy(p => p.Temps).ToArray();
+        }
+
+        public Participation[] GetClassement(Course c, int[] tAge)
+        {
+            return GetClassement(c).Where(p => p.Coureur.Age >= tAge[0] && p.Coureur.Age < tAge[1]).ToArray();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace DAL
         List<Coureur> GetByFirstName(string prenom);
         Coureur GetByLicense(string licence);
         void Save(Coureur c);
+        void Save(List<Coureur> l);
         void Delete(Coureur c);
     }
 }

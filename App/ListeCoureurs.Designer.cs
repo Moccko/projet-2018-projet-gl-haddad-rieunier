@@ -119,6 +119,7 @@
             this.ImporterCoureursBtn.TabIndex = 21;
             this.ImporterCoureursBtn.Text = "Importer";
             this.ImporterCoureursBtn.UseVisualStyleBackColor = true;
+            this.ImporterCoureursBtn.Click += new System.EventHandler(this.ImporterCoureursBtn_Click);
             // 
             // CreerCoureurBtn
             // 

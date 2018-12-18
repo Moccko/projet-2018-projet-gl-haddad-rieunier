@@ -22,7 +22,7 @@ namespace DAL
 
         public override string ToString()
         {
-            return $"{Nom}, {Annee}";
+            return $"{Nom}, {Annee.ToString("dd/MM/yyyy")}";
         }
     }
 }
