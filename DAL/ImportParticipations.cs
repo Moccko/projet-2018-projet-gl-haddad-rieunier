@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Csv;
 using System.IO;
+using Domain;
 
 namespace DAL
 {
@@ -17,40 +18,45 @@ namespace DAL
 
         public ImportParticipations(Course c)
         {
-            _course_repository = StubCourseRepository.Instance;
-            _participation_repository = StubParticipationRepository.Instance;
-            _coureur_repository = StubCoureurRepository.Instance;
+            //_course_repository = StubCourseRepository.Instance;
+            _course_repository = CourseRepository.Instance;
+            //_participation_repository = StubParticipationRepository.Instance;
+            _participation_repository = ParticipationRepository.Instance;
+            //_coureur_repository = StubCoureurRepository.Instance;
+            _coureur_repository = CoureurRepository.Instance;
             _course = c;
         }
 
-        public int Import(string file)
+        public void Import(string file, out int nbImportes, out int total)
         {
+            nbImportes = 0;
+            total = 0;
+
             List<Participation> nouvellesParticipations = new List<Participation>();
             string csv = File.ReadAllText(file);
+
             foreach (ICsvLine line in CsvReader.ReadFromText(csv))
             {
                 string licence = line["licence"];
 
                 Coureur coureur = _coureur_repository.GetByLicense(licence);
-                if (coureur == null)
-                {
-                    return 0;
-                }
 
-                // Au cas où la conversion en entier serait impossible
+                // Au cas où la participation serait invalide
                 try
                 {
-                    nouvellesParticipations.Add(new Participation(_course, coureur, Convert.ToInt32(line["dossard"]), line["temps"]));
+                    _participation_repository.Save(new Participation(_course, coureur, line["temps"], Convert.ToInt32(line["dossard"])));
+                    nbImportes++;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    return 0;
+                }
+                finally
+                {
+                    total++;
                 }
             }
             _participation_repository.Save(nouvellesParticipations);
-
-            return nouvellesParticipations.Count();
         }
     }
 }

@@ -9,32 +9,37 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
 using System.Reflection;
+using Domain;
 
 namespace App
 {
     public partial class ListeCourses : Form
     {
         private ICourseRepository _courseRepository;
+        private IParticipationRepository _participation_repository;
         private List<Course> _courses;
         private Course _course_actuelle;
-        private IParticipationRepository _participation_repository;
 
         public ListeCourses()
         {
             InitializeComponent();
-            _courseRepository = StubCourseRepository.Instance;
-            _participation_repository = StubParticipationRepository.Instance;
+            //_courseRepository = StubCourseRepository.Instance;
+            _courseRepository = CourseRepository.Instance;
+            //_participation_repository = StubParticipationRepository.Instance;
+            _participation_repository = ParticipationRepository.Instance;
             _courses = _courseRepository.GetAll();
-            CoursesLB.Items.AddRange(_courses.Select(course => course.ToString()).ToArray());
-            CoursesLB.SelectedIndex = 0;
+            CoursesLB.DataSource = _courses.Select(course => course).ToList();
+            if (CoursesLB.Items.Count > 0)
+                CoursesLB.SelectedIndex = 0;
         }
 
         private void CoursesLB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _course_actuelle = _courses[CoursesLB.SelectedIndex];
+            //_course_actuelle = ((IList<Course>)CoursesLB.DataSource)[CoursesLB.SelectedIndex];
+            _course_actuelle = (Course)CoursesLB.SelectedItem;
             NomTB.Text = _course_actuelle.Nom;
-            DateMTB.Text = _course_actuelle.Annee.ToString("dd/MM/yyyy");
-            ParticipantsDGV.DataSource = _course_actuelle.Participations;
+            DateMTB.Text = _course_actuelle.Date.ToString("dd/MM/yyyy");
+            ParticipantsDGV.DataSource = _participation_repository.GetByCourse(_course_actuelle);
             EnregistrerBtn.Enabled = false;
         }
 
@@ -65,26 +70,28 @@ namespace App
             {
                 _courseRepository.Save(new Course(creerCourse.NomCourse, creerCourse.DateCourse));
                 _courses = _courseRepository.GetAll();
-                CoursesLB.Items.Clear();
-                CoursesLB.Items.AddRange(_courses.Select(course => course.ToString()).ToArray());
+                CoursesLB.DataSource = _courses.Select(course => course.ToString()).ToArray();
                 CoursesLB.SelectedIndex = 0;
             }
         }
 
         private void AjouterParticipantBtn_Click(object sender, EventArgs e)
         {
-            AjouterParticipant form = new AjouterParticipant(CoursesLB.SelectedItem.ToString());
-            if (form.ShowDialog() == DialogResult.OK)
+            AjouterParticipant form = new AjouterParticipant(_course_actuelle);
+            DialogResult dr = form.ShowDialog();
+            if (dr == DialogResult.OK || dr == DialogResult.Cancel)
             {
-                _participation_repository.Save(new Participation(_course_actuelle, form.Coureur, form.NoDossard, form.Temps));
                 ParticipantsDGV.DataSource = _participation_repository.GetByCourse(_course_actuelle).ToList();
             }
         }
 
         private void SupprimerParticipantBtn_Click(object sender, EventArgs e)
         {
-
-            //_participation_repository.Save(new Participation(_course_actuelle, form.Coureur, form.NoDossard, form.Temps));
+            DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce participant ?", "Avertissement", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                // Sélectionner et supprimer
+            }
         }
 
         private void ImporterCourseBtn_Click(object sender, EventArgs e)
@@ -94,8 +101,7 @@ namespace App
             {
                 int index = CoursesLB.SelectedIndex;
                 _courses = _courseRepository.GetAll();
-                CoursesLB.Items.Clear();
-                CoursesLB.Items.AddRange(_courses.Select(course => course.ToString()).ToArray());
+                CoursesLB.DataSource = _courses.ToList();
                 CoursesLB.SelectedIndex = 0;
                 CoursesLB.SelectedIndex = index;
                 EnregistrerBtn.Enabled = false;
@@ -105,8 +111,7 @@ namespace App
         private void RechercheCoursePTB_KeyUp(object sender, KeyEventArgs e)
         {
             string recherche = RechercheCoursePTB.Text;
-            CoursesLB.Items.Clear();
-            CoursesLB.Items.AddRange(_courses.Where(c => c.Nom.ContientAuMoins(recherche) || c.Annee.ToString().ContientAuMoins(recherche)).ToArray());
+            CoursesLB.DataSource = _courses.Where(c => c.Nom.ContientAuMoins(recherche) || c.Date.ToString().ContientAuMoins(recherche)).ToList();
             if (CoursesLB.Items.Count > 0)
                 CoursesLB.SelectedIndex = 0;
         }
@@ -114,7 +119,7 @@ namespace App
         private void RechercheParticipantPTB_KeyUp(object sender, KeyEventArgs e)
         {
             string recherche = RechercheParticipantPTB.Text;
-            ParticipantsDGV.DataSource = _course_actuelle.Participations.Where(p => p.Coureur.Nom.ContientAuMoins(recherche) || p.Coureur.Prenom.ContientAuMoins(recherche) || p.NumeroDeDossard.ToString().ContientAuMoins(recherche)).ToList();
+            ParticipantsDGV.DataSource = _participation_repository.GetByCourse(_course_actuelle).Where(p => p.Coureur.Nom.ContientAuMoins(recherche) || p.Coureur.Prenom.ContientAuMoins(recherche) || p.NumeroDossard.ToString().ContientAuMoins(recherche)).ToList();
         }
 
         private void DateMTB_Enter(object sender, EventArgs e)

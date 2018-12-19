@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Classes">
+  <logicalClassDesignerModelMoniker Id="6a6fa820-7a6a-47df-b5a5-1e99d69c15f9" />
+  <nestedChildShapes>
+    <classShape Id="179f477d-b582-4ac8-8275-32ba9ffe41db" absoluteBounds="5.375, 1.375, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="41396895-e8a8-4117-888a-88cde62808d4" LastKnownName="Class1" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="631c6856-3fcf-457d-a2af-5545e63d17f3" absoluteBounds="5.39, 1.7650000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="61fe0d4f-d748-4a2b-996f-1d264974cc85" absoluteBounds="5.39, 1.9761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86a85541-e930-473f-bb97-803e7fac80e6" absoluteBounds="8.25, 3.5, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="f0807b3a-510a-4243-bec0-f6cd40e06a98" LastKnownName="Class2" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="27bd1957-8936-450d-91b7-90cdd77645ce" absoluteBounds="8.265, 3.89, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="b1a1f959-69a7-468f-b5b5-207495694d7f" absoluteBounds="8.265, 4.10117186754942, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

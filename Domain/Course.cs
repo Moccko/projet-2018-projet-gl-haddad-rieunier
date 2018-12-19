@@ -4,25 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace Domain
 {
     public class Course
     {
+        public virtual int Id { get; set; }
         public virtual string Nom { get; set; }
-        public virtual DateTime Annee { get; set; }
-        public virtual List<Participation> Participations { get { return StubParticipationRepository.Instance.GetByCourse(this).ToList(); } }
+        public virtual DateTime Date { get; set; }
+        //public virtual List<Participation> Participations { get { return StubParticipationRepository.Instance.GetByCourse(this).ToList(); } }
 
         public Course() { }
 
         public Course(string nom, DateTime annee)
         {
             Nom = nom;
-            Annee = annee;
+            Date = annee;
         }
 
         public override string ToString()
         {
-            return $"{Nom}, {Annee.ToString("dd/MM/yyyy")}";
+            return $"{Nom}, {Date.Year}";
         }
     }
 }

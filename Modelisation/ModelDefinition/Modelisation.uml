@@ -773,22 +773,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="f2b3dddb-2a53-44c6-bf30-523d3fbf1a0a"
-            name="MessageOccurrenceSpecification5">
-            <covered>
-              <lifelineMoniker
-                Id="729719ba-c066-46f4-b2ee-1864bb6c2656"
-                LastKnownName=": Jean-Michel"
-                LastKnownLocation="Modelisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="c3246bb3-d9a4-4ee3-8370-63ddd8561ac2"
             name="MessageOccurrenceSpecification6">
             <covered>
               <lifelineMoniker
                 Id="ea8e8d13-30e3-4c7b-a65f-a625158353f5"
                 LastKnownName="Interface"
+                LastKnownLocation="Modelisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f2b3dddb-2a53-44c6-bf30-523d3fbf1a0a"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="729719ba-c066-46f4-b2ee-1864bb6c2656"
+                LastKnownName=": Jean-Michel"
                 LastKnownLocation="Modelisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1207,22 +1207,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="457e0b56-7e32-4456-b37a-1a2ed6e6cbff"
-            name="MessageOccurrenceSpecification22">
-            <covered>
-              <lifelineMoniker
-                Id="3f2fd5e1-9d58-4acb-9a54-c1334d22b73d"
-                LastKnownName=": Course"
-                LastKnownLocation="Modelisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="6af828c0-ff7c-497c-a0c8-ee7e13f38067"
             name="MessageOccurrenceSpecification21">
             <covered>
               <lifelineMoniker
                 Id="ea8e8d13-30e3-4c7b-a65f-a625158353f5"
                 LastKnownName="Interface"
+                LastKnownLocation="Modelisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="457e0b56-7e32-4456-b37a-1a2ed6e6cbff"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="3f2fd5e1-9d58-4acb-9a54-c1334d22b73d"
+                LastKnownName=": Course"
                 LastKnownLocation="Modelisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1385,22 +1385,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="cfc5bc2d-0220-4cc1-bbb2-1ff9881094d2"
-            name="MessageOccurrenceSpecification33">
-            <covered>
-              <lifelineMoniker
-                Id="3f2fd5e1-9d58-4acb-9a54-c1334d22b73d"
-                LastKnownName=": Course"
-                LastKnownLocation="Modelisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="34875ef4-aee7-4e18-81cb-20fc5f8df137"
             name="MessageOccurrenceSpecification34">
             <covered>
               <lifelineMoniker
                 Id="56dcaec6-3ddf-4624-8529-ea620c818063"
                 LastKnownName=": Coureur"
+                LastKnownLocation="Modelisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="cfc5bc2d-0220-4cc1-bbb2-1ff9881094d2"
+            name="MessageOccurrenceSpecification33">
+            <covered>
+              <lifelineMoniker
+                Id="3f2fd5e1-9d58-4acb-9a54-c1334d22b73d"
+                LastKnownName=": Course"
                 LastKnownLocation="Modelisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1917,22 +1917,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="1eb65499-742b-4bd3-b681-16b89477bddb"
-            name="MessageOccurrenceSpecification57">
-            <covered>
-              <lifelineMoniker
-                Id="729719ba-c066-46f4-b2ee-1864bb6c2656"
-                LastKnownName=": Jean-Michel"
-                LastKnownLocation="Modelisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="9a2fcba8-77df-4565-ae5b-f105aa35d360"
             name="MessageOccurrenceSpecification58">
             <covered>
               <lifelineMoniker
                 Id="ea8e8d13-30e3-4c7b-a65f-a625158353f5"
                 LastKnownName="Interface"
+                LastKnownLocation="Modelisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1eb65499-742b-4bd3-b681-16b89477bddb"
+            name="MessageOccurrenceSpecification57">
+            <covered>
+              <lifelineMoniker
+                Id="729719ba-c066-46f4-b2ee-1864bb6c2656"
+                LastKnownName=": Jean-Michel"
                 LastKnownLocation="Modelisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3052,6 +3052,14 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="099f8e83-91ad-4d9d-8fcb-7b405ed0e056"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

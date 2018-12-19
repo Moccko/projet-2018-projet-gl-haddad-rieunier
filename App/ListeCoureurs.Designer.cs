@@ -74,6 +74,7 @@
             this.SupprimerParticipantBtn.TabIndex = 16;
             this.SupprimerParticipantBtn.Text = "-";
             this.SupprimerParticipantBtn.UseVisualStyleBackColor = true;
+            this.SupprimerParticipantBtn.Click += new System.EventHandler(this.SupprimerParticipantBtn_Click);
             // 
             // AjouterParticipantBtn
             // 
@@ -85,6 +86,7 @@
             this.AjouterParticipantBtn.TabIndex = 15;
             this.AjouterParticipantBtn.Text = "+";
             this.AjouterParticipantBtn.UseVisualStyleBackColor = true;
+            this.AjouterParticipantBtn.Click += new System.EventHandler(this.AjouterParticipantBtn_Click);
             // 
             // ListeParticipationsLb
             // 

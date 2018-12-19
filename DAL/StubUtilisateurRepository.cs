@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
 namespace DAL
 {
@@ -25,9 +26,9 @@ namespace DAL
         private StubUtilisateurRepository()
         {
             _utilisateurs = new List<Utilisateur>();
-            _utilisateurs.Add(new Utilisateur("rrieunier", "rider", "rrieunier@ensc.fr"));
-            _utilisateurs.Add(new Utilisateur("bpesquet", "visualstudio", "bpesquet@ensc.fr"));
-            _utilisateurs.Add(new Utilisateur("rhaddad", "jenerentrepasdansceconflit", "rhaddad@ensc.fr"));
+            _utilisateurs.Add(new Utilisateur("Roman", "Rieunier", "rider", "rrieunier@ensc.fr"));
+            _utilisateurs.Add(new Utilisateur("Baptiste", "Pesquet", "visualstudio", "bpesquet@ensc.fr"));
+            _utilisateurs.Add(new Utilisateur("Rime", "Haddad", "jenerentrepasdansceconflit", "rhaddad@ensc.fr"));
         }
 
         public List<Utilisateur> GetAll()

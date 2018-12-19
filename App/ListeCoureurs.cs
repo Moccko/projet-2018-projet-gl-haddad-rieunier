@@ -8,22 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
+using Domain;
 
 namespace App
 {
     public partial class ListeCoureurs : Form
     {
-        private ICoureurRepository _coureurRepository;
+        private IParticipationRepository _participation_repository;
+        private ICoureurRepository _coureur_repository;
         private Coureur _coureur_actuel;
         private List<Coureur> _coureurs;
 
         public ListeCoureurs()
         {
             InitializeComponent();
-            _coureurRepository = StubCoureurRepository.Instance;
-            _coureurs = _coureurRepository.GetAll();
+            //_coureurRepository = StubCoureurRepository.Instance;
+            _coureur_repository = CoureurRepository.Instance;
 
-            CoureursLB.Items.AddRange(_coureurs.ToArray());
+            _participation_repository = ParticipationRepository.Instance;
+
+            _coureurs = _coureur_repository.GetAll();
+
+            CoureursLB.DataSource = _coureurs.ToList();
             if (_coureurs.Count > 0)
                 CoureursLB.SelectedIndex = 0;
         }
@@ -63,26 +69,25 @@ namespace App
 
         private void RechercheCoureurPTB_KeyUp(object sender, KeyEventArgs e)
         {
-            CoureursLB.Items.Clear();
             string recherche = RechercheCoureurPTB.Text;
-            CoureursLB.Items.AddRange(_coureurs.Where(c => c.Nom.ContientAuMoins(recherche) || c.Prenom.ContientAuMoins(recherche) || c.NoLicenceFFA.ContientAuMoins(recherche)).ToArray());
+            CoureursLB.DataSource = _coureurs.Where(c => c.Nom.ContientAuMoins(recherche) || c.Prenom.ContientAuMoins(recherche) || c.LicenceFFA.ContientAuMoins(recherche)).ToList();
         }
 
         private void RechercheParticipationPTB_KeyUp(object sender, KeyEventArgs e)
         {
             string recherche = RechercheParticipationPTB.Text;
-            ParticipationsDGV.DataSource = _coureur_actuel.Participations.Where(p => p.Course.Nom.ContientAuMoins(recherche) || p.Course.Annee.ToString().ContientAuMoins(recherche)).ToList();
+            ParticipationsDGV.DataSource = _participation_repository.GetByCoureur(_coureur_actuel).Where(p => p.Course.Nom.ContientAuMoins(recherche) || p.Course.Date.ToString().ContientAuMoins(recherche)).ToList();
         }
 
         private void CoureursLB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _coureur_actuel = _coureurs[CoureursLB.SelectedIndex];
+            _coureur_actuel = (Coureur)CoureursLB.SelectedItem;
             PrenomTB.Text = _coureur_actuel.Prenom;
             NomTB.Text = _coureur_actuel.Nom;
             DateNaissanceMTB.Text = _coureur_actuel.DateNaissance.ToString("dd/MM/yyyy");
-            LicenceTB.Text = _coureur_actuel.NoLicenceFFA;
+            LicenceTB.Text = _coureur_actuel.LicenceFFA;
             CourrielTB.Text = _coureur_actuel.Courriel;
-            ParticipationsDGV.DataSource = _coureur_actuel.Participations;
+            ParticipationsDGV.DataSource = _participation_repository.GetByCoureur(_coureur_actuel);
         }
 
         private void CreerCoureurBtn_Click(object sender, EventArgs e)
@@ -90,11 +95,10 @@ namespace App
             CreerCoureur form = new CreerCoureur();
             if (form.ShowDialog() == DialogResult.OK)
             {
-                _coureurRepository.Save(form.Coureur);
-                _coureurs = _coureurRepository.GetAll();
+                _coureur_repository.Save(form.Coureur);
+                _coureurs = _coureur_repository.GetAll();
                 int index = CoureursLB.SelectedIndex;
-                CoureursLB.Items.Clear();
-                CoureursLB.Items.AddRange(_coureurs.ToArray());
+                CoureursLB.DataSource = _coureurs.ToList();
                 CoureursLB.SelectedIndex = index;
             }
         }
@@ -105,12 +109,30 @@ namespace App
             if (form.ShowDialog() == DialogResult.Cancel)
             {
                 int index = CoureursLB.SelectedIndex;
-                _coureurs = _coureurRepository.GetAll();
-                CoureursLB.Items.Clear();
-                CoureursLB.Items.AddRange(_coureurs.Select(course => course.ToString()).ToArray());
+                _coureurs = _coureur_repository.GetAll();
+                CoureursLB.DataSource = _coureurs.ToList();
                 CoureursLB.SelectedIndex = 0;
                 CoureursLB.SelectedIndex = index;
                 EnregistrerBtn.Enabled = false;
+            }
+        }
+
+        private void AjouterParticipantBtn_Click(object sender, EventArgs e)
+        {
+            AjouterParticipant form = new AjouterParticipant(_coureur_actuel);
+            DialogResult dr = form.ShowDialog();
+            if (dr == DialogResult.OK || dr == DialogResult.Cancel)
+            {
+                ParticipationsDGV.DataSource = _participation_repository.GetByCoureur(_coureur_actuel).ToList();
+            }
+        }
+
+        private void SupprimerParticipantBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce participant ?", "Avertissement", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                // Sélectionner et supprimer
             }
         }
     }

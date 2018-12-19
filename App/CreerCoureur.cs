@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using DAL;
+using Domain;
 
 namespace App
 {
@@ -44,7 +45,6 @@ namespace App
         {
             if (DateMTB.MaskFull)
             {
-                MessageBox.Show("veb");
                 string[] dateStr = DateMTB.Text.Split('/');
                 DateTime date = new DateTime(Convert.ToInt32(dateStr[2]), Convert.ToInt32(dateStr[1]), Convert.ToInt32(dateStr[0]));
                 Console.WriteLine(date);

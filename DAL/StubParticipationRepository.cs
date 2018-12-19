@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
 namespace DAL
 {
@@ -31,10 +32,10 @@ namespace DAL
             List<Coureur> coureurs = StubCoureurRepository.Instance.GetAll();
             const int maxDossard = 10000;
             const int maxHoraire = 60;
-            _participations.Add(new Participation(courses[0], coureurs[0], Random.Next(maxDossard), $"{Random.Next(2)}:{Random.Next(maxHoraire)}:{Random.Next(maxHoraire)}"));
-            _participations.Add(new Participation(courses[0], coureurs[1], Random.Next(maxDossard), $"{Random.Next(2)}:{Random.Next(maxHoraire)}:{Random.Next(maxHoraire)}"));
-            _participations.Add(new Participation(courses[1], coureurs[2], Random.Next(maxDossard), $"{Random.Next(2)}:{Random.Next(maxHoraire)}:{Random.Next(maxHoraire)}"));
-            _participations.Add(new Participation(courses[2], coureurs[1], Random.Next(maxDossard), $"{Random.Next(2)}:{Random.Next(maxHoraire)}:{Random.Next(maxHoraire)}"));
+            _participations.Add(new Participation(courses[0], coureurs[0], $"{Random.Next(2)}:{Random.Next(maxHoraire)}:{Random.Next(maxHoraire)}", Random.Next(maxDossard)));
+            _participations.Add(new Participation(courses[0], coureurs[1], $"{Random.Next(2)}:{Random.Next(maxHoraire)}:{Random.Next(maxHoraire)}", Random.Next(maxDossard)));
+            _participations.Add(new Participation(courses[1], coureurs[2], $"{Random.Next(2)}:{Random.Next(maxHoraire)}:{Random.Next(maxHoraire)}", Random.Next(maxDossard)));
+            _participations.Add(new Participation(courses[2], coureurs[1], $"{Random.Next(2)}:{Random.Next(maxHoraire)}:{Random.Next(maxHoraire)}", Random.Next(maxDossard)));
         }
 
         public List<Participation> GetAll()
@@ -59,7 +60,7 @@ namespace DAL
 
         public List<Participation> GetByCoureur(Coureur c)
         {
-            return GetAll().Where(p => p.Coureur == c).OrderBy(p => p.Course.Nom).ThenBy(p => p.Course.Annee).ToList();
+            return GetAll().Where(p => p.Coureur == c).OrderBy(p => p.Course.Nom).ThenBy(p => p.Course.Date).ToList();
         }
 
         public List<Participation> GetByCourse(Course c)
@@ -72,9 +73,14 @@ namespace DAL
             return GetByCourse(c).OrderBy(p => p.Temps).ToArray();
         }
 
+        private int _age(Coureur c)
+        {
+            return Convert.ToInt32(DateTime.Now.Subtract(c.DateNaissance).TotalDays) / 365;
+        }
+
         public Participation[] GetClassement(Course c, int[] tAge)
         {
-            return GetClassement(c).Where(p => p.Coureur.Age >= tAge[0] && p.Coureur.Age < tAge[1]).ToArray();
+            return GetClassement(c).Where(p => _age(p.Coureur) >= tAge[0] && _age(p.Coureur) < tAge[1]).ToArray();
         }
     }
 }

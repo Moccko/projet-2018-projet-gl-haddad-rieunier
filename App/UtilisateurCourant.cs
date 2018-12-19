@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using Domain;
 
 namespace App
 {
@@ -11,11 +12,12 @@ namespace App
     {
         private static Utilisateur _instance = null;
 
-        private static IUtilisateurRepository _utilisateur_repository = new UtilisateurRepository();
+        //private static IUtilisateurRepository _utilisateur_repository = StubUtilisateurRepository.Instance;
+        private static IUtilisateurRepository _utilisateur_repository = UtilisateurRepository.Instance;
 
         public static bool Connecter(string utilisateur, string mdp)
         {
-            _instance = _utilisateur_repository.GetAll().Where(u => u.NomUtilisateur == utilisateur).Where(u => u.MotDePasse == mdp).FirstOrDefault();
+            _instance = _utilisateur_repository.GetAll().Where(u => u.Nom == utilisateur).Where(u => u.MotDePasse == mdp).FirstOrDefault();
             return EstConnecte();
         }
 

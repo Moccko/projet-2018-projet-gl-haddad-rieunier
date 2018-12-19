@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
+using Domain;
 
 namespace App
 {
@@ -34,8 +35,9 @@ namespace App
         private void ValiderBtn_Click(object sender, EventArgs e)
         {
             ImportParticipations import = new ImportParticipations(_course);
-            int nbImportes = import.Import(SelectionnerCsvBtn.Text);
-            MessageBox.Show(nbImportes > 0 ? $"Vous avez bien importé {nbImportes} participations." : "Erreur lors de l'importation du fichier, veuillez réessayer, ou pas.");
+            int nbImportes, total;
+            import.Import(SelectionnerCsvBtn.Text, out nbImportes, out total);
+            MessageBox.Show(nbImportes > 0 ? $"Vous avez importé {nbImportes}/{total} participations." : "Erreur lors de l'importation du fichier, veuillez réessayer, ou pas.");
         }
     }
 }

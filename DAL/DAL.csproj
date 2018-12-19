@@ -74,9 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coureur.cs" />
     <Compile Include="CoureurRepository.cs" />
-    <Compile Include="Course.cs" />
     <Compile Include="CourseRepository.cs" />
     <Compile Include="ICoureurRepository.cs" />
     <Compile Include="ICourseRepository.cs" />
@@ -84,7 +82,6 @@
     <Compile Include="ImportParticipations.cs" />
     <Compile Include="IParticipationRepository.cs" />
     <Compile Include="IUtilisateurRepository.cs" />
-    <Compile Include="Participation.cs" />
     <Compile Include="ParticipationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -92,7 +89,6 @@
     <Compile Include="StubCourseRepository.cs" />
     <Compile Include="StubParticipationRepository.cs" />
     <Compile Include="StubUtilisateurRepository.cs" />
-    <Compile Include="Utilisateur.cs" />
     <Compile Include="UtilisateurRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,9 +96,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hibernate.cfg.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="DB\structure.sql" />
+    <EmbeddedResource Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="MySql.Data.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

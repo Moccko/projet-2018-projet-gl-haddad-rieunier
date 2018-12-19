@@ -3,24 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
 namespace DAL
 {
     public class UtilisateurRepository : Repository, IUtilisateurRepository
     {
+        private static UtilisateurRepository _instance = null;
+        public static UtilisateurRepository Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new UtilisateurRepository();
+                return _instance;
+            }
+        }
+
+        private UtilisateurRepository() { }
+
         public List<Utilisateur> GetAll()
         {
-            throw new NotImplementedException();
+            return Session.Query<Utilisateur>().ToList();
         }
 
         public void Save(Utilisateur u)
         {
-            throw new NotImplementedException();
+            Session.SaveOrUpdate(u);
+            Session.Flush();
         }
 
         public void Delete(Utilisateur u)
         {
-            throw new NotImplementedException();
+            Session.Delete(u);
+            Session.Flush();
         }
     }
 }

@@ -5,9 +5,10 @@
     <id name="Id" column="id" type="int">
       <generator class="native"></generator>
     </id>
+    <property name="Prenom" column="prenom" not-null="true"/>
     <property name="Nom" column="nom" not-null="true"/>
-    <property name="MDP" column="motDePasse" not-null="true"/>
     <property name="Courriel" column="courriel" not-null="true"/>
+    <property name="MotDePasse" column="mot_de_passe" not-null="true"/>
   </class>
 
 </hibernate-mapping>

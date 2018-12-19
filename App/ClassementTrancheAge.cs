@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
+using Domain;
 
 namespace App
 {
@@ -31,8 +32,7 @@ namespace App
             };
         }
 
-        private ColumnHeader[] classementColonnes = {
-        };
+        private ColumnHeader[] classementColonnes = { };
 
         public ClassementTrancheAge(Course c)
         {
@@ -41,26 +41,27 @@ namespace App
             for (int age = 10; age < 100; age += 10)
             {
                 int[] tranche = { age, age + 10 };
-                Participation[] participations = StubParticipationRepository.Instance.GetClassement(c, tranche);
+                //Participation[] participations = StubParticipationRepository.Instance.GetClassement(c, tranche);
+                Participation[] participations = ParticipationRepository.Instance.GetClassement(c, tranche);
                 if (participations.Length > 0)
                 {
                     TabPage tab = new TabPage($"{age}-{age + 9} ans");
                     ListView classement = new ListView();
-                    classement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                    | System.Windows.Forms.AnchorStyles.Left)
-                    | System.Windows.Forms.AnchorStyles.Right)));
+                    classement.Anchor = (((AnchorStyles.Top | AnchorStyles.Bottom)
+                    | AnchorStyles.Left)
+                    | AnchorStyles.Right);
                     classement.Columns.AddRange(ClassementColonnes());
                     //classement.Location = new System.Drawing.Point(15, 137);
                     classement.Name = "ClassementLV";
-                    classement.Size = new System.Drawing.Size(364, 322);
+                    classement.Size = new Size(364, 322);
                     classement.TabIndex = 3;
                     classement.UseCompatibleStateImageBehavior = false;
-                    classement.View = System.Windows.Forms.View.Details;
+                    classement.View = View.Details;
 
                     for (int i = 0; i < participations.Length; i++)
                     {
                         Participation p = participations[i];
-                        string[] ligne = { (i + 1).ToString(), p.Coureur.Prenom, p.Coureur.Nom, p.Temps, $"{p.Coureur.Age} ans" };
+                        string[] ligne = { (i + 1).ToString(), p.Coureur.Prenom, p.Coureur.Nom, p.Temps, $"{p.Coureur.Age()} ans" };
                         classement.Items.Add(new ListViewItem(ligne));
                     }
 

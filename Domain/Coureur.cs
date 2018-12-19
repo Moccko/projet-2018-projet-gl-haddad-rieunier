@@ -4,24 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace Domain
 {
     public class Coureur
     {
+        public virtual int Id { get; set; }
         public virtual string Prenom { get; set; }
         public virtual string Nom { get; set; }
         public virtual char Sexe { get; set; }
         public virtual DateTime DateNaissance { get; set; }
         public virtual string Courriel { get; set; }
-        public virtual string NoLicenceFFA { get; set; }
-        public int Age
-        {
-            get
-            {
-                return Convert.ToInt32(DateTime.Now.Subtract(DateNaissance).TotalDays) / 365;
-            }
-        }
-        public List<Participation> Participations { get { return StubParticipationRepository.Instance.GetByCoureur(this).ToList(); } }
+        public virtual string LicenceFFA { get; set; }
+
+        //public List<Participation> Participations { get { return StubParticipationRepository.Instance.GetByCoureur(this).ToList(); } }
 
         public Coureur() { }
 
@@ -32,7 +27,7 @@ namespace DAL
             Sexe = sexe;
             DateNaissance = naissance;
             Courriel = courriel;
-            NoLicenceFFA = noLicenceFFA;
+            LicenceFFA = noLicenceFFA;
         }
 
         public override string ToString()

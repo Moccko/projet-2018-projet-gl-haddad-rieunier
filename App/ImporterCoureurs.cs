@@ -32,8 +32,9 @@ namespace App
         private void ValiderBtn_Click(object sender, EventArgs e)
         {
             ImportCoureurs import = new ImportCoureurs();
-            int nbImportes = import.Import(SelectionnerCsvBtn.Text);
-            MessageBox.Show(nbImportes > 0 ? $"Vous avez bien importé {nbImportes} coureurs." : "Erreur lors de l'importation du fichier, veuillez réessayer, ou pas.");
+            int nbImportes, total;
+            import.Import(SelectionnerCsvBtn.Text, out nbImportes, out total);
+            MessageBox.Show(nbImportes > 0 ? $"Vous avez importé {nbImportes}/{total} coureurs." : "Erreur lors de l'importation du fichier, veuillez réessayer, ou pas.");
         }
     }
 }

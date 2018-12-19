@@ -34,10 +34,6 @@
             this.CourseLb = new System.Windows.Forms.Label();
             this.CoureurCB = new System.Windows.Forms.ComboBox();
             this.CoureurLb = new System.Windows.Forms.Label();
-            this.AgeLb = new System.Windows.Forms.Label();
-            this.LicenceTB = new System.Windows.Forms.TextBox();
-            this.AgeTB = new System.Windows.Forms.TextBox();
-            this.LicenceLb = new System.Windows.Forms.Label();
             this.TempsLb = new System.Windows.Forms.Label();
             this.TempsMTB = new System.Windows.Forms.MaskedTextBox();
             this.NoDossardLb = new System.Windows.Forms.Label();
@@ -51,12 +47,13 @@
             this.ValiderBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ValiderBtn.Enabled = false;
             this.ValiderBtn.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValiderBtn.Location = new System.Drawing.Point(61, 280);
+            this.ValiderBtn.Location = new System.Drawing.Point(61, 238);
             this.ValiderBtn.Name = "ValiderBtn";
             this.ValiderBtn.Size = new System.Drawing.Size(236, 39);
             this.ValiderBtn.TabIndex = 16;
             this.ValiderBtn.Text = "Valider";
             this.ValiderBtn.UseVisualStyleBackColor = true;
+            this.ValiderBtn.Click += new System.EventHandler(this.ValiderBtn_Click);
             // 
             // CreerCourseLb
             // 
@@ -96,7 +93,6 @@
             this.CoureurCB.Name = "CoureurCB";
             this.CoureurCB.Size = new System.Drawing.Size(334, 21);
             this.CoureurCB.TabIndex = 17;
-            this.CoureurCB.SelectedIndexChanged += new System.EventHandler(this.CoureurCB_SelectedIndexChanged);
             // 
             // CoureurLb
             // 
@@ -109,49 +105,11 @@
             this.CoureurLb.Text = "Nom du coureur";
             this.CoureurLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AgeLb
-            // 
-            this.AgeLb.AutoSize = true;
-            this.AgeLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgeLb.Location = new System.Drawing.Point(188, 162);
-            this.AgeLb.Name = "AgeLb";
-            this.AgeLb.Size = new System.Drawing.Size(39, 19);
-            this.AgeLb.TabIndex = 19;
-            this.AgeLb.Text = "Âge";
-            this.AgeLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LicenceTB
-            // 
-            this.LicenceTB.Enabled = false;
-            this.LicenceTB.Location = new System.Drawing.Point(12, 184);
-            this.LicenceTB.Name = "LicenceTB";
-            this.LicenceTB.Size = new System.Drawing.Size(154, 20);
-            this.LicenceTB.TabIndex = 20;
-            // 
-            // AgeTB
-            // 
-            this.AgeTB.Enabled = false;
-            this.AgeTB.Location = new System.Drawing.Point(192, 184);
-            this.AgeTB.Name = "AgeTB";
-            this.AgeTB.Size = new System.Drawing.Size(154, 20);
-            this.AgeTB.TabIndex = 21;
-            // 
-            // LicenceLb
-            // 
-            this.LicenceLb.AutoSize = true;
-            this.LicenceLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LicenceLb.Location = new System.Drawing.Point(8, 162);
-            this.LicenceLb.Name = "LicenceLb";
-            this.LicenceLb.Size = new System.Drawing.Size(107, 19);
-            this.LicenceLb.TabIndex = 22;
-            this.LicenceLb.Text = "Licence FFA";
-            this.LicenceLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // TempsLb
             // 
             this.TempsLb.AutoSize = true;
             this.TempsLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TempsLb.Location = new System.Drawing.Point(8, 214);
+            this.TempsLb.Location = new System.Drawing.Point(8, 169);
             this.TempsLb.Name = "TempsLb";
             this.TempsLb.Size = new System.Drawing.Size(62, 19);
             this.TempsLb.TabIndex = 23;
@@ -160,7 +118,7 @@
             // 
             // TempsMTB
             // 
-            this.TempsMTB.Location = new System.Drawing.Point(12, 242);
+            this.TempsMTB.Location = new System.Drawing.Point(12, 197);
             this.TempsMTB.Mask = "\\00:00:00";
             this.TempsMTB.Name = "TempsMTB";
             this.TempsMTB.Size = new System.Drawing.Size(154, 20);
@@ -171,7 +129,7 @@
             // 
             this.NoDossardLb.AutoSize = true;
             this.NoDossardLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoDossardLb.Location = new System.Drawing.Point(188, 221);
+            this.NoDossardLb.Location = new System.Drawing.Point(188, 176);
             this.NoDossardLb.Name = "NoDossardLb";
             this.NoDossardLb.Size = new System.Drawing.Size(165, 19);
             this.NoDossardLb.TabIndex = 26;
@@ -180,7 +138,7 @@
             // 
             // NoDossardMTB
             // 
-            this.NoDossardMTB.Location = new System.Drawing.Point(192, 242);
+            this.NoDossardMTB.Location = new System.Drawing.Point(192, 197);
             this.NoDossardMTB.Mask = "999999";
             this.NoDossardMTB.Name = "NoDossardMTB";
             this.NoDossardMTB.Size = new System.Drawing.Size(154, 20);
@@ -191,15 +149,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 336);
+            this.ClientSize = new System.Drawing.Size(358, 294);
             this.Controls.Add(this.NoDossardMTB);
             this.Controls.Add(this.NoDossardLb);
             this.Controls.Add(this.TempsMTB);
             this.Controls.Add(this.TempsLb);
-            this.Controls.Add(this.LicenceLb);
-            this.Controls.Add(this.AgeTB);
-            this.Controls.Add(this.LicenceTB);
-            this.Controls.Add(this.AgeLb);
             this.Controls.Add(this.CoureurLb);
             this.Controls.Add(this.CoureurCB);
             this.Controls.Add(this.ValiderBtn);
@@ -221,10 +175,6 @@
         private System.Windows.Forms.Label CourseLb;
         private System.Windows.Forms.ComboBox CoureurCB;
         private System.Windows.Forms.Label CoureurLb;
-        private System.Windows.Forms.Label AgeLb;
-        private System.Windows.Forms.TextBox LicenceTB;
-        private System.Windows.Forms.TextBox AgeTB;
-        private System.Windows.Forms.Label LicenceLb;
         private System.Windows.Forms.Label TempsLb;
         private System.Windows.Forms.MaskedTextBox TempsMTB;
         private System.Windows.Forms.Label NoDossardLb;

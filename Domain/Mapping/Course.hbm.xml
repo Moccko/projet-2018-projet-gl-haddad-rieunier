@@ -6,7 +6,7 @@
       <generator class="native"></generator>
     </id>
     <property name="Nom" column="nom" not-null="true"/>
-    <property name="Annee" column="annee" not-null="true"/>
+    <property name="Date" column="date" not-null="true"/>
   </class>
 
 </hibernate-mapping>

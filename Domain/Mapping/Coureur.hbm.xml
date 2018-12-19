@@ -5,12 +5,12 @@
     <id name="Id" column="id" type="int">
       <generator class="native"></generator>
     </id>
-    <property name="Annee" column="annee" not-null="true"/>
+    <property name="Prenom" column="prenom" not-null="true"/>
+    <property name="Nom" column="nom" not-null="true"/>
+    <property name="Sexe" column="sexe" not-null="true"/>
+    <property name="DateNaissance" column="date_naissance" not-null="true"/>
     <property name="Courriel" column="courriel" not-null="true"/>
-    <property name="Nom" column="nom" not-null="false"/>
-    <property name="Prenom" column="prenom" not-null="false"/>
-    <property name="Sexe" column="sexe" not-null="false"/>
-    <property name="NoLicenceFFA" column="noLicenceFFA" not-null="false"/>
+    <property name="LicenceFFA" column="licence_ffa" not-null="true"/>
   </class>
 
 </hibernate-mapping>

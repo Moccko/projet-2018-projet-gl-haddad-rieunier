@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
 namespace DAL
 {
@@ -70,7 +71,7 @@ namespace DAL
 
         public Coureur GetByLicense(string licence)
         {
-            return _coureurs.Where(c => c.NoLicenceFFA == licence).FirstOrDefault();
+            return _coureurs.Where(c => c.LicenceFFA == licence).FirstOrDefault();
         }
     }
 }

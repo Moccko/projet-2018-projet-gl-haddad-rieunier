@@ -4,19 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace Domain
 {
     public class Utilisateur
     {
-        public virtual string NomUtilisateur { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string Prenom { get; set; }
+        public virtual string Nom { get; set; }
         public virtual string MotDePasse { get; set; }
         public virtual string Courriel { get; set; }
 
         public Utilisateur() { }
 
-        public Utilisateur(string nomUtilisateur, string motDePasse, string courriel)
+        public Utilisateur(string prenom, string nom, string courriel, string motDePasse)
         {
-            NomUtilisateur = nomUtilisateur;
+            Prenom = prenom;
+            Nom = nom;
             MotDePasse = motDePasse;
             Courriel = courriel;
         }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Csv;
 using System.IO;
+using Domain;
 
 namespace DAL
 {
@@ -14,11 +15,15 @@ namespace DAL
 
         public ImportCoureurs()
         {
-            _coureur_repository = StubCoureurRepository.Instance;
+            //_coureur_repository = StubCoureurRepository.Instance;
+            _coureur_repository = CoureurRepository.Instance;
         }
 
-        public int Import(string file)
+        public void Import(string file, out int nbImportes, out int total)
         {
+            nbImportes = 0;
+            total = 0;
+
             List<Coureur> nouveauxCoureurs = new List<Coureur>();
             string csv = File.ReadAllText(file);
             foreach (ICsvLine line in CsvReader.ReadFromText(csv))
@@ -29,17 +34,18 @@ namespace DAL
                 {
                     int[] dateStr = line["datenaissance"].Split('/').Select(nStr => Convert.ToInt32(nStr)).ToArray();
                     DateTime dateNaissance = new DateTime(dateStr[2], dateStr[1], dateStr[0]);
-                    nouveauxCoureurs.Add(new Coureur(line["prenom"], line["nom"], line["sexe"][0], dateNaissance, line["courriel"], line["licence"]));
+                    _coureur_repository.Save(new Coureur(line["prenom"], line["nom"], line["sexe"][0], dateNaissance, line["courriel"], line["licence"]));
+                    nbImportes++;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    return 0;
+                }
+                finally
+                {
+                    total++;
                 }
             }
-            _coureur_repository.Save(nouveauxCoureurs);
-
-            return nouveauxCoureurs.Count();
         }
     }
 }
