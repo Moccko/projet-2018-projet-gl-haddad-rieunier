@@ -28,9 +28,18 @@ namespace App
             //_participation_repository = StubParticipationRepository.Instance;
             _participation_repository = ParticipationRepository.Instance;
             _courses = _courseRepository.GetAll();
-            CoursesLB.DataSource = _courses.Select(course => course).ToList();
+            CoursesLB.DataSource = _courses.ToList();
             if (CoursesLB.Items.Count > 0)
                 CoursesLB.SelectedIndex = 0;
+            if (!UtilisateurCourant.EstConnecte())
+            {
+                AjouterParticipantBtn.Enabled = false;
+                SupprimerParticipantBtn.Enabled = false;
+                CreerCourseBtn.Enabled = false;
+                SupprimerCourseBtn.Enabled = false;
+                ImporterCourseBtn.Enabled = false;
+                EnregistrerBtn.Enabled = false;
+            }
         }
 
         private void CoursesLB_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,7 +79,7 @@ namespace App
             {
                 _courseRepository.Save(new Course(creerCourse.NomCourse, creerCourse.DateCourse));
                 _courses = _courseRepository.GetAll();
-                CoursesLB.DataSource = _courses.Select(course => course.ToString()).ToArray();
+                CoursesLB.DataSource = _courses.ToArray();
                 CoursesLB.SelectedIndex = 0;
             }
         }
@@ -165,6 +174,22 @@ namespace App
         {
             ClassementTrancheAge form = new ClassementTrancheAge(_course_actuelle);
             if (form.ShowDialog() == DialogResult.Cancel) { }
+        }
+
+        private void ConnecterBtn_Click(object sender, EventArgs e)
+        {
+            Connexion form = new Connexion();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                AjouterParticipantBtn.Enabled = true;
+                SupprimerParticipantBtn.Enabled = true;
+                CreerCourseBtn.Enabled = true;
+                SupprimerCourseBtn.Enabled = true;
+                ImporterCourseBtn.Enabled = true;
+                EnregistrerBtn.Enabled = true;
+                AvertissementConnexionLb.Visible = false;
+                ConnecterBtn.Visible = false;
+            }
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CoursesLB = new System.Windows.Forms.ListBox();
             this.NomLb = new System.Windows.Forms.Label();
             this.NomTB = new System.Windows.Forms.TextBox();
@@ -53,10 +53,10 @@
             this.DateCal = new System.Windows.Forms.MonthCalendar();
             this.RechercheCoursePTB = new App.PlaceholderTextBox();
             this.RechercheParticipantPTB = new App.PlaceholderTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AvertissementConnexionLb = new System.Windows.Forms.Label();
             this.ClassementGlobalBtn = new System.Windows.Forms.Button();
             this.ClassementTrancheAgeBtn = new System.Windows.Forms.Button();
+            this.ConnecterBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ParticipantsDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,14 +148,14 @@
             this.ParticipantsDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ParticipantsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ParticipantsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ParticipantsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ParticipantsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Course,
@@ -164,24 +164,24 @@
             this.Temps,
             this.AllureMoyenne,
             this.VitesseMoyenne});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ParticipantsDGV.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ParticipantsDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.ParticipantsDGV.Location = new System.Drawing.Point(267, 203);
             this.ParticipantsDGV.Name = "ParticipantsDGV";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ParticipantsDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ParticipantsDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ParticipantsDGV.Size = new System.Drawing.Size(400, 111);
             this.ParticipantsDGV.TabIndex = 5;
             this.ParticipantsDGV.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.ParticipantsDGV_CellBeginEdit);
@@ -316,28 +316,17 @@
             this.RechercheParticipantPTB.Text = "Rechercher un participant";
             this.RechercheParticipantPTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RechercheParticipantPTB_KeyUp);
             // 
-            // label1
+            // AvertissementConnexionLb
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.AvertissementConnexionLb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(263, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 69);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Vous devez être connecté pour accéder aux fonctionnalités d\'édition";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(535, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 31);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Se connecter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AvertissementConnexionLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AvertissementConnexionLb.Location = new System.Drawing.Point(263, 15);
+            this.AvertissementConnexionLb.Name = "AvertissementConnexionLb";
+            this.AvertissementConnexionLb.Size = new System.Drawing.Size(304, 50);
+            this.AvertissementConnexionLb.TabIndex = 20;
+            this.AvertissementConnexionLb.Text = "Vous devez être connecté pour accéder aux fonctionnalités d\'édition";
+            this.AvertissementConnexionLb.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // ClassementGlobalBtn
             // 
@@ -363,16 +352,28 @@
             this.ClassementTrancheAgeBtn.UseVisualStyleBackColor = true;
             this.ClassementTrancheAgeBtn.Click += new System.EventHandler(this.ClassementTrancheAgeBtn_Click);
             // 
+            // ConnecterBtn
+            // 
+            this.ConnecterBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ConnecterBtn.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConnecterBtn.Location = new System.Drawing.Point(563, 25);
+            this.ConnecterBtn.Name = "ConnecterBtn";
+            this.ConnecterBtn.Size = new System.Drawing.Size(104, 21);
+            this.ConnecterBtn.TabIndex = 24;
+            this.ConnecterBtn.Text = "Se connecter";
+            this.ConnecterBtn.UseVisualStyleBackColor = true;
+            this.ConnecterBtn.Click += new System.EventHandler(this.ConnecterBtn_Click);
+            // 
             // ListeCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 370);
+            this.Controls.Add(this.ConnecterBtn);
             this.Controls.Add(this.DateCal);
             this.Controls.Add(this.ClassementTrancheAgeBtn);
             this.Controls.Add(this.ClassementGlobalBtn);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.AvertissementConnexionLb);
             this.Controls.Add(this.DateMTB);
             this.Controls.Add(this.RechercheCoursePTB);
             this.Controls.Add(this.RechercheParticipantPTB);
@@ -420,9 +421,9 @@
         private PlaceholderTextBox RechercheCoursePTB;
         private System.Windows.Forms.MaskedTextBox DateMTB;
         private System.Windows.Forms.MonthCalendar DateCal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label AvertissementConnexionLb;
         private System.Windows.Forms.Button ClassementGlobalBtn;
         private System.Windows.Forms.Button ClassementTrancheAgeBtn;
+        private System.Windows.Forms.Button ConnecterBtn;
     }
 }

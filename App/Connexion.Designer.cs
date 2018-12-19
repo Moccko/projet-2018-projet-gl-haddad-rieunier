@@ -48,7 +48,6 @@
             // 
             // ConnexionBtn
             // 
-            this.ConnexionBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ConnexionBtn.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConnexionBtn.Location = new System.Drawing.Point(102, 211);
             this.ConnexionBtn.Name = "ConnexionBtn";

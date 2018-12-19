@@ -116,6 +116,12 @@
               <referencedTypeMoniker Id="7244b9aa-715f-4539-ab4a-2ce6ae0a8ddd" LastKnownName="String" />
             </type_NamedElement>
           </property>
+          <property Id="ad5ac58e-2b79-4dad-b57d-68a51849d91f" name="distance" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="544206ad-0594-461a-bd59-38d334eca721" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="15d38529-20f1-4285-a52f-483be4985c26" LastKnownName="Double" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -359,6 +365,11 @@
     <packageHasNamedElement>
       <referencedType Id="6ff179a0-c372-4dde-871b-ba3073b1aed3" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="15d38529-20f1-4285-a52f-483be4985c26" name="Double" isAbstract="false" isLeaf="false" cachedFullName="Double">
+        <elementDefinition Id="f45ea388-9c87-4c28-9ad4-4d0e3bcfe675" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

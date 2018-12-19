@@ -96,7 +96,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\structure.sql" />
+    <Content Include="DB\Content.sql" />
+    <Content Include="DB\Database.sql" />
+    <Content Include="DB\Structure.sql" />
     <EmbeddedResource Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

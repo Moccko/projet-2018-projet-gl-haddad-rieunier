@@ -38,5 +38,10 @@ namespace DAL
             Session.Delete(u);
             Session.Flush();
         }
+
+        public Utilisateur Exists(string c, string m)
+        {
+            return Session.Query<Utilisateur>().Where(u => u.Courriel == c && u.MotDePasse == m).FirstOrDefault();
+        }
     }
 }

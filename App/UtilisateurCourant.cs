@@ -12,18 +12,21 @@ namespace App
     {
         private static Utilisateur _instance = null;
 
+        public static Utilisateur Utilisateur { get { return _instance; } }
+
         //private static IUtilisateurRepository _utilisateur_repository = StubUtilisateurRepository.Instance;
         private static IUtilisateurRepository _utilisateur_repository = UtilisateurRepository.Instance;
 
-        public static bool Connecter(string utilisateur, string mdp)
+        public static bool Connecter(string courriel, string mdp)
         {
-            _instance = _utilisateur_repository.GetAll().Where(u => u.Nom == utilisateur).Where(u => u.MotDePasse == mdp).FirstOrDefault();
+            //_instance = _utilisateur_repository.GetAll().Where(u => u.Nom == utilisateur).Where(u => u.MotDePasse == mdp).FirstOrDefault();
+            _instance = _utilisateur_repository.Exists(courriel, mdp);
             return EstConnecte();
         }
 
         public static bool EstConnecte()
         {
-            return _instance == null;
+            return _instance != null;
         }
 
         public static void Deconnecter()

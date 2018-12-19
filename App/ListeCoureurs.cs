@@ -32,6 +32,15 @@ namespace App
             CoureursLB.DataSource = _coureurs.ToList();
             if (_coureurs.Count > 0)
                 CoureursLB.SelectedIndex = 0;
+            if (!UtilisateurCourant.EstConnecte())
+            {
+                CreerCoureurBtn.Enabled = false;
+                SupprimerCoureurBtn.Enabled = false;
+                ImporterCoureursBtn.Enabled = false;
+                EnregistrerBtn.Enabled = false;
+                AjouterParticipantBtn.Enabled = false;
+                SupprimerParticipantBtn.Enabled = false;
+            }
         }
 
         private void DateNaissanceMTB_Enter(object sender, EventArgs e)
@@ -133,6 +142,22 @@ namespace App
             if (result == DialogResult.Yes)
             {
                 // Sélectionner et supprimer
+            }
+        }
+
+        private void ConnecterBtn_Click(object sender, EventArgs e)
+        {
+            Connexion form = new Connexion();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                CreerCoureurBtn.Enabled = true;
+                SupprimerCoureurBtn.Enabled = true;
+                ImporterCoureursBtn.Enabled = true;
+                EnregistrerBtn.Enabled = true;
+                AjouterParticipantBtn.Enabled = true;
+                SupprimerParticipantBtn.Enabled = true;
+                AvertissementConnexionLb.Visible = false;
+                ConnecterBtn.Visible = false;
             }
         }
     }

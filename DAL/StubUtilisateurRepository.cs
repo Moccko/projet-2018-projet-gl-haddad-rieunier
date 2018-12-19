@@ -45,6 +45,11 @@ namespace DAL
         {
             _utilisateurs.Remove(u);
         }
+
+        public Utilisateur Exists(string c, string m)
+        {
+            return GetAll().Where(u => u.Courriel == c && u.MotDePasse == m).FirstOrDefault();
+        }
     }
 }
 

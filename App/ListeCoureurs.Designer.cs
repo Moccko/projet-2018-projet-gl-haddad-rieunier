@@ -50,6 +50,8 @@
             this.DateNaissanceCal = new System.Windows.Forms.MonthCalendar();
             this.RechercheCoureurPTB = new App.PlaceholderTextBox();
             this.RechercheParticipationPTB = new App.PlaceholderTextBox();
+            this.ConnecterBtn = new System.Windows.Forms.Button();
+            this.AvertissementConnexionLb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ParticipationsDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,7 +166,7 @@
             // 
             this.PrenomLb.AutoSize = true;
             this.PrenomLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrenomLb.Location = new System.Drawing.Point(263, 17);
+            this.PrenomLb.Location = new System.Drawing.Point(263, 49);
             this.PrenomLb.Name = "PrenomLb";
             this.PrenomLb.Size = new System.Drawing.Size(73, 19);
             this.PrenomLb.TabIndex = 24;
@@ -176,7 +178,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NomLb.AutoSize = true;
             this.NomLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomLb.Location = new System.Drawing.Point(480, 19);
+            this.NomLb.Location = new System.Drawing.Point(480, 51);
             this.NomLb.Name = "NomLb";
             this.NomLb.Size = new System.Drawing.Size(47, 19);
             this.NomLb.TabIndex = 25;
@@ -184,7 +186,7 @@
             // 
             // PrenomTB
             // 
-            this.PrenomTB.Location = new System.Drawing.Point(267, 40);
+            this.PrenomTB.Location = new System.Drawing.Point(267, 72);
             this.PrenomTB.Name = "PrenomTB";
             this.PrenomTB.Size = new System.Drawing.Size(183, 20);
             this.PrenomTB.TabIndex = 26;
@@ -193,7 +195,7 @@
             // 
             this.NomTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NomTB.Location = new System.Drawing.Point(484, 41);
+            this.NomTB.Location = new System.Drawing.Point(484, 73);
             this.NomTB.Name = "NomTB";
             this.NomTB.Size = new System.Drawing.Size(183, 20);
             this.NomTB.TabIndex = 27;
@@ -202,7 +204,7 @@
             // 
             this.LicenceTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LicenceTB.Location = new System.Drawing.Point(484, 85);
+            this.LicenceTB.Location = new System.Drawing.Point(484, 118);
             this.LicenceTB.Name = "LicenceTB";
             this.LicenceTB.Size = new System.Drawing.Size(183, 20);
             this.LicenceTB.TabIndex = 31;
@@ -213,7 +215,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LicenceLb.AutoSize = true;
             this.LicenceLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LicenceLb.Location = new System.Drawing.Point(480, 63);
+            this.LicenceLb.Location = new System.Drawing.Point(480, 96);
             this.LicenceLb.Name = "LicenceLb";
             this.LicenceLb.Size = new System.Drawing.Size(156, 19);
             this.LicenceLb.TabIndex = 29;
@@ -223,7 +225,7 @@
             // 
             this.DateNaissanceLb.AutoSize = true;
             this.DateNaissanceLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateNaissanceLb.Location = new System.Drawing.Point(263, 63);
+            this.DateNaissanceLb.Location = new System.Drawing.Point(263, 96);
             this.DateNaissanceLb.Name = "DateNaissanceLb";
             this.DateNaissanceLb.Size = new System.Drawing.Size(150, 19);
             this.DateNaissanceLb.TabIndex = 28;
@@ -235,7 +237,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CourrielLb.AutoSize = true;
             this.CourrielLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourrielLb.Location = new System.Drawing.Point(263, 108);
+            this.CourrielLb.Location = new System.Drawing.Point(263, 134);
             this.CourrielLb.Name = "CourrielLb";
             this.CourrielLb.Size = new System.Drawing.Size(80, 19);
             this.CourrielLb.TabIndex = 32;
@@ -245,14 +247,14 @@
             // 
             this.CourrielTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CourrielTB.Location = new System.Drawing.Point(267, 131);
+            this.CourrielTB.Location = new System.Drawing.Point(267, 157);
             this.CourrielTB.Name = "CourrielTB";
             this.CourrielTB.Size = new System.Drawing.Size(400, 20);
             this.CourrielTB.TabIndex = 33;
             // 
             // DateNaissanceMTB
             // 
-            this.DateNaissanceMTB.Location = new System.Drawing.Point(267, 85);
+            this.DateNaissanceMTB.Location = new System.Drawing.Point(267, 118);
             this.DateNaissanceMTB.Mask = "00/00/0000";
             this.DateNaissanceMTB.Name = "DateNaissanceMTB";
             this.DateNaissanceMTB.Size = new System.Drawing.Size(183, 20);
@@ -264,7 +266,7 @@
             // 
             // DateNaissanceCal
             // 
-            this.DateNaissanceCal.Location = new System.Drawing.Point(224, 108);
+            this.DateNaissanceCal.Location = new System.Drawing.Point(224, 134);
             this.DateNaissanceCal.Name = "DateNaissanceCal";
             this.DateNaissanceCal.TabIndex = 35;
             this.DateNaissanceCal.Visible = false;
@@ -293,11 +295,37 @@
             this.RechercheParticipationPTB.Text = "Rechercher une participation";
             this.RechercheParticipationPTB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RechercheParticipationPTB_KeyUp);
             // 
+            // ConnecterBtn
+            // 
+            this.ConnecterBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ConnecterBtn.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConnecterBtn.Location = new System.Drawing.Point(563, 12);
+            this.ConnecterBtn.Name = "ConnecterBtn";
+            this.ConnecterBtn.Size = new System.Drawing.Size(104, 21);
+            this.ConnecterBtn.TabIndex = 39;
+            this.ConnecterBtn.Text = "Se connecter";
+            this.ConnecterBtn.UseVisualStyleBackColor = true;
+            this.ConnecterBtn.Click += new System.EventHandler(this.ConnecterBtn_Click);
+            // 
+            // AvertissementConnexionLb
+            // 
+            this.AvertissementConnexionLb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AvertissementConnexionLb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AvertissementConnexionLb.Location = new System.Drawing.Point(263, 2);
+            this.AvertissementConnexionLb.Name = "AvertissementConnexionLb";
+            this.AvertissementConnexionLb.Size = new System.Drawing.Size(304, 50);
+            this.AvertissementConnexionLb.TabIndex = 38;
+            this.AvertissementConnexionLb.Text = "Vous devez être connecté pour accéder aux fonctionnalités d\'édition";
+            this.AvertissementConnexionLb.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // ListeCoureurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 370);
+            this.Controls.Add(this.ConnecterBtn);
+            this.Controls.Add(this.AvertissementConnexionLb);
             this.Controls.Add(this.RechercheCoureurPTB);
             this.Controls.Add(this.DateNaissanceCal);
             this.Controls.Add(this.DateNaissanceMTB);
@@ -352,5 +380,7 @@
         private System.Windows.Forms.MonthCalendar DateNaissanceCal;
         private PlaceholderTextBox RechercheCoureurPTB;
         private PlaceholderTextBox RechercheParticipationPTB;
+        private System.Windows.Forms.Button ConnecterBtn;
+        private System.Windows.Forms.Label AvertissementConnexionLb;
     }
 }

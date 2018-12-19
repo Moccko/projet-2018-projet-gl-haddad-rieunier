@@ -375,6 +375,25 @@
                 LastKnownLocation="Modelisation.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="544206ad-0594-461a-bd59-38d334eca721"
+            name="distance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="f45ea388-9c87-4c28-9ad4-4d0e3bcfe675"
+                LastKnownName="Double"
+                LastKnownLocation="Modelisation.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>

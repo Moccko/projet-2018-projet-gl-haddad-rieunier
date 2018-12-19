@@ -7,10 +7,11 @@ using Domain;
 
 namespace DAL
 {
-   public interface IUtilisateurRepository
+    public interface IUtilisateurRepository
     {
         List<Utilisateur> GetAll();
         void Save(Utilisateur u);
         void Delete(Utilisateur u);
+        Utilisateur Exists(string c, string m);
     }
 }

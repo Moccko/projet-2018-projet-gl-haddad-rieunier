@@ -20,7 +20,17 @@ namespace App
 
         private void ConnexionBtn_Click(object sender, EventArgs e)
         {
-
+            
+            if (UtilisateurCourant.Connecter(IdTB.Text, MdpTB.Text))
+            {
+                Console.WriteLine(UtilisateurCourant.Utilisateur == null);
+                MessageBox.Show($"Bienvenue {UtilisateurCourant.Utilisateur.Prenom}.");
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Mauvaise combinaison identifiant/mot de passe, veuillez réessayer.");
+            }
         }
     }
 }
